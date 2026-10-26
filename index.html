@@ -4,18 +4,6 @@ title: 首页
 ---
 <h1 id="clock-title"></h1>
 
-<script>
-  function updateClock() {
-    const now = new Date();
-    const time = now.toLocaleTimeString('zh-CN', { hour12: false });
-    document.getElementById('clock-title').textContent = time + " · {{ site.title }}";
-    document.title = time;
-  }
-  updateClock();
-  setInterval(updateClock, 1000);
-</script>
-<p>{{ site.description }}</p>
-
 <ul class="post-list">
   {% for post in site.posts %}
   <li>
