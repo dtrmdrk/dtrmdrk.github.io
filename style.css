@@ -10,7 +10,9 @@ body {
 }
 
 .site-title {
-  font-variant-numeric: tabular-nums;  /* 数字全部等宽 爽！ */
+  font-variant-numeric: tabular-nums; 
+  min-width: 8ch;      /* 至少容纳 8 个字符的宽度 */
+  text-align: center;  /* 宽度固定后重新居中 */
 }
 
 
