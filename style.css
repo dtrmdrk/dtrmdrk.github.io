@@ -1,0 +1,24 @@
+/* 全局 */
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.8;
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background: #fafafa;
+}
+
+/* 导航 */
+nav { margin-bottom: 2rem; }
+nav a { color: #666; text-decoration: none; }
+nav a:hover { color: #000; }
+
+/* 首页文章列表 */
+.post-list { list-style: none; padding: 0; }
+.post-list li { margin: 0.5rem 0; }
+.post-list .date { color: #999; margin-right: 1rem; font-size: 0.9em; }
+
+/* 文章页 */
+.post-meta { color: #999; font-size: 0.9em; }
+a { color: #2a6fb0; }
