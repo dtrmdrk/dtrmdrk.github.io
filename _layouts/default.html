@@ -16,10 +16,60 @@
       <a href="{{ '/image/' | relative_url }}">图像</a>
       <a href="{{ '/about/' | relative_url }}">关于</a>
       <button id="theme-toggle">🌙</button>
-</nav>
     </nav>
-    <!-- 页面内容会插在这里 -->
     {{ content }}
   </main>
+
+  <script>
+    const btn = document.getElementById('theme-toggle');
+    const themes = ['light', 'dark', 'sepia'];
+    const icons = { light: '🌙', dark: '☀️', sepia: '📜' };
+
+    let currentTheme = localStorage.getItem('theme');
+
+    function applyTheme(name) {
+      document.body.classList.remove(...themes);
+      if (name !== 'light') document.body.classList.add(name);
+      btn.textContent = icons[name];
+    }
+
+    function themeByTime() {
+      const h = new Date().getHours();
+      return (h >= 19 || h < 7) ? 'dark' : 'light';
+    }
+
+    if (currentTheme === null) {
+      currentTheme = themeByTime();
+    }
+    applyTheme(currentTheme);
+
+    
+    btn.addEventListener('click', () => {
+      currentTheme = themes[(themes.indexOf(currentTheme) + 1) % themes.length];
+      applyTheme(currentTheme);
+      localStorage.setItem('theme', currentTheme);
+    });
+
+
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString('zh-CN', { hour12: false });
+
+      const clockEl = document.getElementById('clock-title');
+      if (clockEl) {
+        clockEl.textContent = time + " · {{ site.title }}";
+      }
+
+      document.title = time;
+
+      if (localStorage.getItem('theme') === null) {
+        currentTheme = themeByTime();
+        applyTheme(currentTheme);
+      }
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
 </body>
 </html>
