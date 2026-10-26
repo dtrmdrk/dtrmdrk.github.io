@@ -1,6 +1,6 @@
 ---
 layout: default
-title:文字
+title: 文字
 permalink: /text/
 ---
 <ul class="post-list">
