@@ -9,6 +9,11 @@ body {
   background: #fafafa;
 }
 
+.site-title {
+  font-variant-numeric: tabular-nums;  /* 数字全部等宽shuangle */
+}
+
+
 /* 导航 */
 nav { margin-bottom: 2rem; }
 nav a { color: #666; text-decoration: none; }
