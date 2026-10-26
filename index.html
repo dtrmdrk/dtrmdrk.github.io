@@ -2,7 +2,20 @@
 layout: default
 title: 首页
 ---
-<h1>{{ site.title }}</h1>
+<h1 id="clock-title"></h1>
+
+<script>
+  function updateClock() {
+    const now = new Date();
+    const time = now.toLocaleTimeString('zh-CN', { hour12: false });
+    // 显示：时间 · 博客标题（第1项和第2项的组合）
+    document.getElementById('clock-title').textContent = time + " · {{ site.title }}";
+    // 浏览器标签页标题也跟着变（第3项，不想要就删掉下一行）
+    document.title = time;
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+</script>
 <p>{{ site.description }}</p>
 
 <ul class="post-list">
