@@ -8,9 +8,7 @@ title: 首页
   function updateClock() {
     const now = new Date();
     const time = now.toLocaleTimeString('zh-CN', { hour12: false });
-    // 显示：时间 · 博客标题
     document.getElementById('clock-title').textContent = time + " · {{ site.title }}";
-    // 浏览器标签页标题跟着变
     document.title = time;
   }
   updateClock();
