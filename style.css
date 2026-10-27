@@ -1,12 +1,4 @@
-#clock-title {
-  font-variant-numeric: tabular-nums;
-  min-width: 8ch;
-  text-align: center;       
-  transition: opacity 0.8s ease; 
-}
-#clock-title.fade-out { opacity: 0; }
-
-
+/* ===== 主题变量：换主题 = 换这组颜色 ===== */
 body {
   --bg: #fafafa;
   --text: #333;
@@ -23,7 +15,6 @@ body {
   padding: 2rem 1rem;
 }
 
-
 body.dark {
   --bg: #1a1a1a;
   --text: #d4d4d4;
@@ -32,27 +23,26 @@ body.dark {
   --meta: #888;
 }
 
-
 body.sepia {
-  --bg: #e8dcc0;        
-  --text: #4a3423;      
-  --link: #9c5c1c;     
-  --line: #b8a684;    
-  --meta: #8a7a5c;      
+  --bg: #e8dcc0;
+  --text: #4a3423;
+  --link: #9c5c1c;
+  --line: #b8a684;
+  --meta: #8a7a5c;
 }
 
-
-nav.sidebar {
+/* ===== 顶部导航栏 ===== */
+nav {
   display: flex;
-  justify-content: space-evenly;
+  gap: 1.5rem;
   align-items: center;
   border-bottom: 2px solid var(--line);
   padding-bottom: 0.8rem;
   margin-bottom: 2rem;
-  gap: 3rem;
+  flex-wrap: wrap;
 }
-nav.sidebar a { color: var(--meta); text-decoration: none; }
-nav.sidebar a:hover { color: var(--text); }
+nav a { color: var(--meta); text-decoration: none; }
+nav a:hover { color: var(--text); }
 
 #theme-toggle {
   margin-left: auto;
@@ -65,6 +55,16 @@ nav.sidebar a:hover { color: var(--text); }
   font-size: 1rem;
 }
 
+/* ===== 首页大标题 / 时钟 ===== */
+#clock-title {
+  font-variant-numeric: tabular-nums;
+  min-width: 8ch;
+  text-align: center;
+  transition: opacity 0.8s ease;
+}
+#clock-title.fade-out { opacity: 0; }
+
+/* ===== 文章列表 ===== */
 .post-list { list-style: none; padding: 0; }
 .post-list li { margin: 0.5rem 0; }
 .post-list .date { color: var(--meta); margin-right: 1rem; font-size: 0.9em; }
@@ -72,9 +72,7 @@ nav.sidebar a:hover { color: var(--text); }
 .post-meta { color: var(--meta); font-size: 0.9em; }
 a { color: var(--link); }
 
-
-
-
+/* ===== 标签 ===== */
 .tag {
   display: inline-block;
   font-size: 0.75em;
@@ -85,20 +83,35 @@ a { color: var(--link); }
   margin-left: 0.4rem;
 }
 
+/* ===== 搜索框 ===== */
+#search {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+}
+#search:focus {
+  outline: none;
+  border-color: var(--link);
+}
 
-
-/* 漫画阅读器 */
+/* ===== 漫画阅读器 ===== */
 .spread {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;                 
+  gap: 4px;
   cursor: pointer;
   user-select: none;
 }
 .spread img {
-  max-height: 80vh;         
-  max-width: 49%;          
+  max-height: 80vh;
+  max-width: 49%;
   object-fit: contain;
 }
 .reader-bar {
@@ -118,13 +131,6 @@ a { color: var(--link); }
   cursor: pointer;
 }
 
-@media (max-width: 700px) {
-  .spread { flex-direction: column; }
-  .spread img { max-width: 100%; max-height: none; }
-}
-
-
-
 .back-btn {
   display: inline-block;
   margin-bottom: 1rem;
@@ -134,67 +140,19 @@ a { color: var(--link); }
 }
 .back-btn:hover { color: var(--text); }
 
-
-
-#search {
-  width: 100%;
-  padding: 0.6rem 1rem;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  background: var(--bg);
-  color: var(--text);
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-  box-sizing: border-box;
-}
-#search:focus {
-  outline: none;
-  border-color: var(--link);  
+/* 手机端：漫画单页竖排 */
+@media (max-width: 700px) {
+  .spread { flex-direction: column; }
+  .spread img { max-width: 100%; max-height: none; }
 }
 
-
-
-
-@media (min-width: 900px) {
-  body {
-    max-width: none;         
-    margin: 0;
-    padding: 2rem 3rem;
-    display: flex;
-    gap: 3rem;
-  }
-
-  nav.sidebar {
-    flex-direction: column;         
-    align-items: flex-start;
-    border-bottom: none;
-    border-right: 2px solid var(--line);
-    padding: 0 2rem 0 0;
-    width: 120px;
-    flex-shrink: 0;
-    position: sticky;               
-    top: 2rem;
-    height:  calc(100vh - 4rem);
-  }
-
-  #theme-toggle {
-    margin-left: 0;
-    margin-top:  1rem;                
-  }
-
-  main.container {
-    flex: 1;
-    max-width: 1200px;               
-  }
+/* ===== 漫画沉浸模式：隐藏导航，画面铺满 ===== */
+.reader-mode nav { display: none; }
+.reader-mode main.container {
+  max-width: none;
+  padding: 0.5rem;
 }
-
-
-@media (min-width: 900px) {
-  .spread {
-    gap: 6px;                        
-  }
-  .spread img {
-    max-height: 88vh;               
-    max-width: 49.5%;
-  }
+.reader-mode .spread img {
+  max-height: 95vh;
+  max-width: 49.5%;
 }
