@@ -49,7 +49,7 @@ nav.sidebar {
   border-bottom: 2px solid var(--line);
   padding-bottom: 0.8rem;
   margin-bottom: 2rem;
-  flex-wrap: wrap;
+  gap: 3rem;
 }
 nav.sidebar a { color: var(--meta); text-decoration: none; }
 nav.sidebar a:hover { color: var(--text); }
@@ -179,7 +179,7 @@ a { color: var(--link); }
 
   #theme-toggle {
     margin-left: 0;
-    margin-top:  auto;                
+    margin-top:  1rem;                
   }
 
   main.container {
