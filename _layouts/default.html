@@ -60,7 +60,7 @@ function tick() {
   const now = new Date();
   const time = now.toLocaleTimeString('zh-CN', { hour12: false });
   if (titleEl) {
-    titleEl.textContent = time + " · {{ site.title }}";
+    titleEl.textContent = now.toLocaleDateString('zh-CN') + ' ' + time;  
   }
   document.title = time;
 
