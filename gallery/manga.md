@@ -1,6 +1,7 @@
 ---
 layout: default
 title: manga
+permalink: /gallery/manga/
 ---
 
 <a class="back-btn" href="{{ '/gallery/' | relative_url }}">← 返回</a>
