@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 关于
+title: about
 permalink: /about/
 ---
 ao3:
