@@ -1,6 +1,6 @@
 ---
 layout: default
-title: gallery
+title: 图集
 permalink: /gallery/
 ---
 
@@ -9,7 +9,7 @@ permalink: /gallery/
   <li><a href="{{ '/gallery/manga/' | relative_url }}">复活赛 </a></li>
 </ul>
 
-<h2>图集</h2>
+<h2>同人</h2>
 <ul class="post-list">
 {% for post in site.categories.gallery %}
 <li>
