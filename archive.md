@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 索引
+title: archive
 permalink: /archive/
 ---
 <ul class="post-list">
