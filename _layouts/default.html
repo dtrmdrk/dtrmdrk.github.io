@@ -73,7 +73,7 @@ function tick() {
 if (titleEl) {
 
   const firstVisit = !localStorage.getItem('visited');
-  itleEl.textContent = firstVisit ? '{{ site.title1 }}' : '{{ site.title2 }}';
+  TitleEl.textContent = firstVisit ? '{{ site.title1 }}' : '{{ site.title2 }}';
   localStorage.setItem('visited', '1');
   
   setTimeout(() => {
