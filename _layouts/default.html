@@ -51,22 +51,38 @@
     });
 
 
-    function updateClock() {
-      const now = new Date();
-      const time = now.toLocaleTimeString('zh-CN', { hour12: false });
+ 
+const titleEl = document.getElementById('clock-title');
 
-      const clockEl = document.getElementById('clock-title');
-      if (clockEl) {
-        clockEl.textContent = time + " · {{ site.title }}";
-      }
+function tick() {
+  const now = new Date();
+  const time = now.toLocaleTimeString('zh-CN', { hour12: false });
+  if (titleEl) {
+    titleEl.textContent = time + " · {{ site.title }}";
+  }
+  document.title = time;
 
-      document.title = time;
+  if (localStorage.getItem('theme') === null) {
+    currentTheme = themeByTime();
+    applyTheme(currentTheme);
+  }
+}
 
-      if (localStorage.getItem('theme') === null) {
-        currentTheme = themeByTime();
-        applyTheme(currentTheme);
-      }
-    }
+if (titleEl) {
+  requestAnimationFrame(() => titleEl.classList.add('visible'));
+
+  setTimeout(() => {
+    titleEl.classList.add('fade-out');
+    setTimeout(() => {
+      tick();                   
+      setInterval(tick, 1000);   
+      titleEl.classList.remove('fade-out');  
+    }, 800);
+  }, 3000);
+} else {
+
+  setInterval(tick, 1000);
+}
 
     updateClock();
     setInterval(updateClock, 1000);
