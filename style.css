@@ -174,7 +174,7 @@ a { color: var(--link); }
     flex-shrink: 0;
     position: sticky;               
     top: 2rem;
-    height: fit-content;
+    height:  calc(100vh - 4rem);
   }
 
   #theme-toggle {
