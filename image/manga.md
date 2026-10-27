@@ -3,6 +3,7 @@ layout: default
 title: manga
 ---
 
+<a class="back-btn" href="{{ '/image/' | relative_url }}">← 返回</a>
 <div class="spread" id="spread"></div>
 
 <div class="reader-bar">
