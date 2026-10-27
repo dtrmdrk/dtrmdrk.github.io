@@ -31,8 +31,8 @@ body.sepia {
   --meta: #8a7a5c;
 }
 
-/* ===== 顶部导航栏 ===== */
-nav {
+/* ===== 导航（默认 = 手机端顶部横排） ===== */
+nav.sidebar {
   display: flex;
   gap: 1.5rem;
   align-items: center;
@@ -41,8 +41,8 @@ nav {
   margin-bottom: 2rem;
   flex-wrap: wrap;
 }
-nav a { color: var(--meta); text-decoration: none; }
-nav a:hover { color: var(--text); }
+nav.sidebar a { color: var(--meta); text-decoration: none; }
+nav.sidebar a:hover { color: var(--text); }
 
 #theme-toggle {
   margin-left: auto;
@@ -146,13 +146,49 @@ a { color: var(--link); }
   .spread img { max-width: 100%; max-height: none; }
 }
 
-/* ===== 漫画沉浸模式：隐藏导航，画面铺满 ===== */
-.reader-mode nav { display: none; }
-.reader-mode main.container {
-  max-width: none;
-  padding: 0.5rem;
+/* ===== 桌面端：左侧边栏布局 ===== */
+@media (min-width: 900px) {
+  body {
+    max-width: none;
+    margin: 0;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: center;      /* 超宽屏整体居中 */
+    gap: 3rem;
+  }
+
+  nav.sidebar {
+    flex-direction: column;       /* 链接竖排 */
+    align-items: flex-start;
+    border-bottom: none;
+    border-right: 2px solid var(--line);
+    padding: 0 2rem 0 0;
+    width: 120px;
+    flex-shrink: 0;
+    position: sticky;             /* 滚动时导航钉在原地 */
+    top: 2rem;
+    height: calc(100vh - 4rem);   /* 整屏高度 */
+    gap: 2rem;                    /* 链接间距，想更散改成 2.5rem 或 3rem */
+    flex-wrap: nowrap;
+  }
+
+  #theme-toggle {
+    margin-left: 0;
+    margin-top: 2rem;             /* 月亮在链接下方固定位置（想贴底改成 auto） */
+  }
+
+  main.container {
+    flex: 1;
+    max-width: 1200px;            /* 内容区大幅拓宽，漫画直接受益 */
+  }
+
+  .spread img {
+    max-height: 88vh;
+    max-width: 49.5%;
+  }
 }
-.reader-mode .spread img {
-  max-height: 95vh;
-  max-width: 49.5%;
-}
+
+/* ===== 可选：漫画沉浸模式（默认关闭） =====
+   想启用：在 gallery/manga.md 的 front matter 里加一行 reader: true */
+.reader-mode nav.sidebar { display: none; }
+.reader-mode main.container { max-width: none; }
