@@ -1,8 +1,12 @@
 #clock-title {
-  font-variant-numeric: tabular-nums; 
-  min-width: 8ch;     
-  text-align: center;  
+  font-variant-numeric: tabular-nums;
+  min-width: 8ch;
+  text-align: center;
+  opacity: 0;                    
+  transition: opacity 0.8s ease; 
 }
+#clock-title.visible  { opacity: 1; }
+#clock-title.fade-out { opacity: 0; }
 
 
 body {
