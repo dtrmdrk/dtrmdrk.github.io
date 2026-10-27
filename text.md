@@ -16,3 +16,6 @@ permalink: /text/
 </li>
 {% endfor %}
 </ul>
+
+
+<p>调试：全站文章 {{ site.posts.size }} 篇，文字分类 {{ site.categories.文字.size }} 篇</p>
