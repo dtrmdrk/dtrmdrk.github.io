@@ -1,7 +1,6 @@
 ---
 layout: default
 title: manga
-permalink: /manga/
 ---
 
 <div class="spread" id="spread"></div>
