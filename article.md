@@ -1,6 +1,6 @@
 ---
 layout: default
-title: article
+title: 文章
 permalink: /article/
 ---
 <ul class="post-list">
