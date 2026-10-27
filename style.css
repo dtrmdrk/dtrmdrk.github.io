@@ -44,7 +44,7 @@ body.sepia {
 
 nav.sidebar {
   display: flex;
-  gap: 1.5rem;
+  gap: 2.5rem;
   align-items: center;
   border-bottom: 2px solid var(--line);
   padding-bottom: 0.8rem;
@@ -179,7 +179,7 @@ a { color: var(--link); }
 
   #theme-toggle {
     margin-left: 0;
-    margin-top: 2rem;                
+    margin-top:  auto;                
   }
 
   main.container {
