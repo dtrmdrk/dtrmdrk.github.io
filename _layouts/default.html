@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
 </head>
 <body>
-  <main class="container">
+  <main class="sidebar">
     <nav>
       <a href="{{ '/' | relative_url }}">首页</a>
       <a href="{{ '/archive/' | relative_url }}">索引</a>
@@ -19,6 +19,8 @@
       <a href="{{ '/about/' | relative_url }}">关于</a>
       <button id="theme-toggle">🌙</button>
     </nav>
+
+  <main class="container">
     {{ content }}
   </main>
 
