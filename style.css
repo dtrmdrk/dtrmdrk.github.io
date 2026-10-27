@@ -78,3 +78,14 @@ a { color: var(--link); }
 /* 文章页 */
 .post-meta { color: #999; font-size: 0.9em; }
 a { color: #2a6fb0; }
+
+
+.tag {
+  display: inline-block;
+  font-size: 0.75em;
+  color: var(--meta);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0 0.5rem;
+  margin-left: 0.4rem;
+}
