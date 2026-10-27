@@ -169,3 +169,50 @@ a { color: #2a6fb0; }
   outline: none;
   border-color: var(--link);  
 }
+
+
+
+
+@media (min-width: 900px) {
+  body {
+    max-width: none;         
+    margin: 0;
+    padding: 2rem 3rem;
+    display: flex;
+    gap: 3rem;
+  }
+
+  nav.sidebar {
+    flex-direction: column;         
+    align-items: flex-start;
+    border-bottom: none;
+    border-right: 2px solid var(--line);
+    padding: 0 2rem 0 0;
+    width: 120px;
+    flex-shrink: 0;
+    position: sticky;               
+    top: 2rem;
+    height: fit-content;
+  }
+
+  #theme-toggle {
+    margin-left: 0;
+    margin-top: 2rem;                
+  }
+
+  main.container {
+    flex: 1;
+    max-width: 1200px;               
+  }
+}
+
+
+@media (min-width: 900px) {
+  .spread {
+    gap: 6px;                        
+  }
+  .spread img {
+    max-height: 88vh;               
+    max-width: 49.5%;
+  }
+}
