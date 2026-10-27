@@ -23,6 +23,7 @@ body {
   padding: 2rem 1rem;
 }
 
+
 body.dark {
   --bg: #1a1a1a;
   --text: #d4d4d4;
@@ -41,16 +42,28 @@ body.sepia {
 }
 
 
-nav {
+nav.sidebar {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
+  align-items: center;
   border-bottom: 2px solid var(--line);
   padding-bottom: 0.8rem;
   margin-bottom: 2rem;
-  align-items: center;  
+  flex-wrap: wrap;
 }
-nav a { color: var(--meta); text-decoration: none; }
-nav a:hover { color: var(--text); }
+nav.sidebar a { color: var(--meta); text-decoration: none; }
+nav.sidebar a:hover { color: var(--text); }
+
+#theme-toggle {
+  margin-left: auto;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  border-radius: 6px;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
 
 .post-list { list-style: none; padding: 0; }
 .post-list li { margin: 0.5rem 0; }
