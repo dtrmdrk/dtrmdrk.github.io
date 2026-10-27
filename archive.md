@@ -1,6 +1,6 @@
 ---
 layout: default
-title: archive
+title: 索引
 permalink: /archive/
 ---
 
@@ -27,7 +27,7 @@ const results = document.getElementById('results');
 
 function render(list) {
   if (!input.value.trim()) {
-    results.innerHTML = '<p style="color: var(--meta);">输入关键词开始搜索标题、标签、分类和内容摘要。</p>';
+    results.innerHTML = '<p style="color: var(--meta);"></p>';
     return;
   }
   if (list.length === 0) {
