@@ -45,7 +45,7 @@ function render() {
     const left = 2 * step;
     html = `<img src="${pages[right]}">`;
     if (left < pages.length) {
-
+       html = `<img src="${pages[left]}">` + html;
     }
     numEl.textContent = `${right + 1}~${Math.min(left + 1, pages.length)} / ${pages.length}`;
   }
