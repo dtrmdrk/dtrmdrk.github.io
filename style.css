@@ -138,3 +138,21 @@ a { color: #2a6fb0; }
   font-size: 1.1rem;
 }
 .back-btn:hover { color: var(--text); }
+
+
+
+#search {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+}
+#search:focus {
+  outline: none;
+  border-color: var(--link);  
+}
