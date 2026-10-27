@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 漫画
+title: manga
 permalink: /manga/
 ---
 
