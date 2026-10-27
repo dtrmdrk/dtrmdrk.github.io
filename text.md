@@ -1,10 +1,10 @@
 ---
 layout: default
-title: 文字
+title: text
 permalink: /text/
 ---
 <ul class="post-list">
-{% for post in site.categories.文字 %}
+{% for post in site.categories.text %}
 <li>
   <span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
   <a href="{{ post.url }}">{{ post.title }}</a>
