@@ -29,6 +29,16 @@ body.dark {
   --meta: #888;
 }
 
+
+body.sepia {
+  --bg: #f4ecd8;
+  --text: #5b4636;
+  --link: #8a6d3b;
+  --line: #d8ccb8;
+  --meta: #a09484;
+}
+
+
 nav {
   display: flex;
   gap: 2rem;
