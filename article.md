@@ -1,7 +1,7 @@
 ---
 layout: default
-title: text
-permalink: /text/
+title: article
+permalink: /article/
 ---
 <ul class="post-list">
 {% for post in site.categories.text %}
