@@ -89,3 +89,41 @@ a { color: #2a6fb0; }
   padding: 0 0.5rem;
   margin-left: 0.4rem;
 }
+
+
+
+/* 漫画阅读器 */
+.spread {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;                 
+  cursor: pointer;
+  user-select: none;
+}
+.spread img {
+  max-height: 80vh;         
+  max-width: 49%;          
+  object-fit: contain;
+}
+.reader-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  color: var(--meta);
+}
+.reader-bar button {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  border-radius: 6px;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .spread { flex-direction: column; }
+  .spread img { max-width: 100%; max-height: none; }
+}
