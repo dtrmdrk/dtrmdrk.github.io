@@ -9,15 +9,16 @@
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
 </head>
 <body{% if page.reader %} class="reader-mode"{% endif %}>
+  <nav class="sidebar">
+    <a href="{{ '/' | relative_url }}">首页</a>
+    <a href="{{ '/archive/' | relative_url }}">索引</a>
+    <a href="{{ '/article/' | relative_url }}">文章</a>
+    <a href="{{ '/gallery/' | relative_url }}">图集</a>
+    <a href="{{ '/about/' | relative_url }}">关于</a>
+    <button id="theme-toggle">🌙</button>
+  </nav>
+
   <main class="container">
-    <nav>
-      <a href="{{ '/' | relative_url }}">首页</a>
-      <a href="{{ '/archive/' | relative_url }}">索引</a>
-      <a href="{{ '/article/' | relative_url }}">文章</a>
-      <a href="{{ '/gallery/' | relative_url }}">图集</a>
-      <a href="{{ '/about/' | relative_url }}">关于</a>
-      <button id="theme-toggle">🌙</button>
-    </nav>
     {{ content }}
   </main>
 
@@ -61,7 +62,6 @@
         titleEl.textContent = time;
       }
       document.title = time;
-      // 准点自动切主题（只在访客没手动选过时）
       if (localStorage.getItem('theme') === null) {
         currentTheme = themeByTime();
         applyTheme(currentTheme);
@@ -69,12 +69,10 @@
     }
 
     if (titleEl) {
-      // 首次访问 title1，之后 title2
       const firstVisit = !localStorage.getItem('visited');
       titleEl.textContent = firstVisit ? '{{ site.title1 }}' : '{{ site.title2 }}';
       localStorage.setItem('visited', '1');
 
-      // 3 秒后淡出换时钟
       setTimeout(() => {
         titleEl.classList.add('fade-out');
         setTimeout(() => {
