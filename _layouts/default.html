@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌙</text></svg>">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌙</text></svg>">
   <title>{{ page.title | default: site.title }}</title>
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
 </head>
-<body>
-  <nav class="sidebar">
+<body{% if page.reader %} class="reader-mode"{% endif %}>
+  <main class="container">
+    <nav>
       <a href="{{ '/' | relative_url }}">首页</a>
       <a href="{{ '/archive/' | relative_url }}">索引</a>
       <a href="{{ '/article/' | relative_url }}">文章</a>
       <a href="{{ '/gallery/' | relative_url }}">图集</a>
       <a href="{{ '/about/' | relative_url }}">关于</a>
       <button id="theme-toggle">🌙</button>
-  </nav>
-
-  <main class="container">
+    </nav>
     {{ content }}
   </main>
 
   <script>
+    // ========== 主题系统：light → dark → sepia 轮换 ==========
     const btn = document.getElementById('theme-toggle');
     const themes = ['light', 'dark', 'sepia'];
     const icons = { light: '🌙', dark: '☀️', sepia: '📜' };
@@ -46,47 +45,47 @@
     }
     applyTheme(currentTheme);
 
-    
     btn.addEventListener('click', () => {
       currentTheme = themes[(themes.indexOf(currentTheme) + 1) % themes.length];
       applyTheme(currentTheme);
       localStorage.setItem('theme', currentTheme);
     });
 
+    // ========== 首页标题 → 时钟 ==========
+    const titleEl = document.getElementById('clock-title');
 
- 
-const titleEl = document.getElementById('clock-title');
+    function tick() {
+      const now = new Date();
+      const time = now.toLocaleTimeString('zh-CN', { hour12: false });
+      if (titleEl) {
+        titleEl.textContent = time;
+      }
+      document.title = time;
+      // 准点自动切主题（只在访客没手动选过时）
+      if (localStorage.getItem('theme') === null) {
+        currentTheme = themeByTime();
+        applyTheme(currentTheme);
+      }
+    }
 
-function tick() {
-  const now = new Date();
-  const time = now.toLocaleTimeString('zh-CN', { hour12: false });
-  if (titleEl) {
-    titleEl.textContent = now.toLocaleDateString('zh-CN') + ' ' + time;  
-  }
-  document.title = time;
+    if (titleEl) {
+      // 首次访问 title1，之后 title2
+      const firstVisit = !localStorage.getItem('visited');
+      titleEl.textContent = firstVisit ? '{{ site.title1 }}' : '{{ site.title2 }}';
+      localStorage.setItem('visited', '1');
 
-  if (localStorage.getItem('theme') === null) {
-    currentTheme = themeByTime();
-    applyTheme(currentTheme);
-  }
-}
-
-if (titleEl) {
-  const firstVisit = !localStorage.getItem('visited');
-  titleEl.textContent = firstVisit ? '{{ site.title1 }}' : '{{ site.title2 }}';
-  localStorage.setItem('visited', '1');
-  
-  setTimeout(() => {
-    titleEl.classList.add('fade-out');
-    setTimeout(() => {
-      tick();                   
-      setInterval(tick, 1000);   
-      titleEl.classList.remove('fade-out');  
-    }, 800);
-  }, 3000);
-} else {
-  setInterval(tick, 1000);
-}
+      // 3 秒后淡出换时钟
+      setTimeout(() => {
+        titleEl.classList.add('fade-out');
+        setTimeout(() => {
+          tick();
+          setInterval(tick, 1000);
+          titleEl.classList.remove('fade-out');
+        }, 800);
+      }, 3000);
+    } else {
+      setInterval(tick, 1000);
+    }
   </script>
 </body>
 </html>
