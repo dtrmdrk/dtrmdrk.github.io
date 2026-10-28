@@ -192,3 +192,51 @@ a { color: var(--link); }
    想启用：在 gallery/manga.md 的 front matter 里加一行 reader: true */
 .reader-mode nav.sidebar { display: none; }
 .reader-mode main.container { max-width: none; }
+
+
+/* ===== 右侧播放器（仅桌面端显示） ===== */
+.player {
+  display: none;               /* 手机端隐藏 */
+}
+
+@media (min-width: 900px) {
+  .player {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    width: 180px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+    border-left: 2px solid var(--line);
+    padding-left: 2rem;
+  }
+  .player-title {
+    color: var(--meta);
+    font-size: 0.9em;
+    margin: 0;
+  }
+  .player-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  #play-btn {
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--text);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+  }
+  #track-name {
+    font-size: 0.85em;
+    color: var(--meta);
+  }
+  #seek {
+    width: 100%;
+    accent-color: var(--link);
+  }
+}
