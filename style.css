@@ -6,7 +6,13 @@ body {
   --line: #ddd;
   --meta: #999;
 
-  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", serif; 
+}
+nav a, #theme-toggle, .post-list .date, .tag, .post-meta, .reader-bar {
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;   
+}
+
+
   line-height: 1.8;
   color: var(--text);
   background: var(--bg);
