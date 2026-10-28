@@ -1,0 +1,13 @@
+---
+layout: post
+title: 进度记录
+categories: article
+tags: [progress]
+---
+
+Added a clock-title animation.
+Added a feature to follow the system's dark mode.
+
+
+Fixed some bugs:
+-Fixed a bug where 
