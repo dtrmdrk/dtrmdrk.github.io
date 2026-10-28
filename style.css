@@ -168,13 +168,13 @@ a { color: var(--link); }
     position: sticky;             /* 滚动时导航钉在原地 */
     top: 2rem;
     height: calc(100vh - 4rem);   /* 整屏高度 */
-    gap: 2rem;                    /* 链接间距，想更散改成 2.5rem 或 3rem */
+    gap: 2.5rem;                    /* 链接间距，想更散改成 2.5rem 或 3rem */
     flex-wrap: nowrap;
   }
 
   #theme-toggle {
     margin-left: 0;
-    margin-top: 2rem;             /* 月亮在链接下方固定位置（想贴底改成 auto） */
+    margin-top: 1.5rem;             /* 月亮在链接下方固定位置（想贴底改成 auto） */
   }
 
   main.container {
