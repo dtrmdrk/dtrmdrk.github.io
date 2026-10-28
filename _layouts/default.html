@@ -23,14 +23,19 @@
   </main>
 
 
-  <aside class="player">
-    <p class="player-title">♪ 播放器</p>
-    <audio id="bgm" src="{{ '/assets/music/01.mp3' | relative_url }}"></audio>
-    <div class="player-bar">
-      <button id="play-btn">▶</button>
-      <span id="track-name">Track 01</span>
+   <aside class="player" id="player">
+    <div class="player-head">
+      <p class="player-title">♪ 播放器</p>
+      <button id="fold-btn" title="折叠 / 展开">—</button>
     </div>
-    <input type="range" id="seek" min="0" max="100" value="0">
+    <div class="player-body">
+      <audio id="bgm" src="{{ '/assets/music/01.mp3' | relative_url }}"></audio>
+      <div class="player-bar">
+        <button id="play-btn">▶</button>
+        <span id="track-name">Track 01</span>
+      </div>
+      <input type="range" id="seek" min="0" max="100" value="0">
+    </div>
   </aside>
   
   <script>
