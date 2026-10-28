@@ -75,6 +75,37 @@ nav.sidebar a:hover { color: var(--text); }
 .post-meta { color: var(--meta); font-size: 0.9em; }
 a { color: var(--link); }
 
+
+.post-list a {
+  color: var(--text);              
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.post-list a:hover {
+  color: var(--link);            
+}
+
+.post-list a {
+  color: var(--text);
+  text-decoration: none;
+  position: relative;
+}
+.post-list a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: var(--link);
+  transition: width 0.25s ease;
+}
+.post-list a:hover::after {
+  width: 100%;
+}
+
+
+
 /* ===== 标签 ===== */
 .tag {
   display: inline-block;
