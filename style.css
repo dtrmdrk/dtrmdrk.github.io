@@ -162,13 +162,13 @@ a { color: var(--link); }
     align-items: flex-start;
     border-bottom: none;
     border-right: 2px solid var(--line);
-    padding: 0 1.5rem 0 0;
+    padding: 0.5 1rem 0 0;
     width: 120px;
     flex-shrink: 0;
     position: sticky;             /* 滚动时导航钉在原地 */
     top: 2rem;
     height: calc(100vh - 4rem);   /* 整屏高度 */
-    gap: 3rem;                    /* 链接间距，想更散改成 2.5rem 或 3rem */
+    gap: 4rem;                    /* 链接间距，想更散改成 2.5rem 或 3rem */
     flex-wrap: nowrap;
   }
 
