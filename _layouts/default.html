@@ -22,8 +22,18 @@
     {{ content }}
   </main>
 
+
+  <aside class="player">
+    <p class="player-title">♪ 播放器</p>
+    <audio id="bgm" src="{{ '/assets/music/01.mp3' | relative_url }}"></audio>
+    <div class="player-bar">
+      <button id="play-btn">▶</button>
+      <span id="track-name">Track 01</span>
+    </div>
+    <input type="range" id="seek" min="0" max="100" value="0">
+  </aside>
+  
   <script>
-    // ========== 主题系统：light → dark → sepia 轮换 ==========
     const btn = document.getElementById('theme-toggle');
     const themes = ['light', 'dark', 'sepia'];
     const icons = { light: '🌙', dark: '☀️', sepia: '📜' };
@@ -52,7 +62,7 @@
       localStorage.setItem('theme', currentTheme);
     });
 
-    // ========== 首页标题 → 时钟 ==========
+   
     const titleEl = document.getElementById('clock-title');
 
     function tick() {
