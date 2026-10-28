@@ -15,7 +15,7 @@
     <a href="{{ '/article/' | relative_url }}">文章</a>
     <a href="{{ '/gallery/' | relative_url }}">图集</a>
     <a href="{{ '/about/' | relative_url }}">关于</a>
-    <button id="theme-toggle">🌙</button>
+    <button id="theme-toggle">☽</button>
   </nav>
 
   <main class="container">
@@ -74,7 +74,7 @@
     
     const btn = document.getElementById('theme-toggle');
     const themes = ['light', 'dark', 'sepia'];
-    const icons = { light: '🌙', dark: '☀️', sepia: '📜' };
+    const icons = { light: '☽', dark: '☀︎', sepia: '✑' };
 
     let currentTheme = localStorage.getItem('theme');
 
