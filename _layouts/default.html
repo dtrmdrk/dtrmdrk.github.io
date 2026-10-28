@@ -55,6 +55,20 @@
         audio.currentTime = (seek.value / 100) * audio.duration;
       });
       audio.addEventListener('ended', () => { playBtn.textContent = '▶'; });
+            
+      const player = document.getElementById('player');
+      const foldBtn = document.getElementById('fold-btn');
+      if (player && foldBtn) {
+        if (localStorage.getItem('player-folded') === '1') {
+          player.classList.add('collapsed');
+          foldBtn.textContent = '♪';
+        }
+        foldBtn.addEventListener('click', () => {
+          const folded = player.classList.toggle('collapsed');
+          foldBtn.textContent = folded ? '♪' : '—';
+          localStorage.setItem('player-folded', folded ? '1' : '0');
+        });
+      }
     }
 
     
