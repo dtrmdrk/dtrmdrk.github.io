@@ -16,11 +16,11 @@ body {
 }
 
 body.dark {
-  --bg: #1a1a1a;
-  --text: #d4d4d4;
-  --link: #6fa8dc;
-  --line: #444;
-  --meta: #888;
+  --bg: #444444;
+  --text: #DDDDDD;
+  --link: #E2E800;
+  --line: #141414;
+  --meta: #979797;
 }
 
 body.sepia {
