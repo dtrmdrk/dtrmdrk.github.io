@@ -222,6 +222,30 @@ a { color: var(--link); }
     align-items: center;
     gap: 0.6rem;
   }
+  .player-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #fold-btn {
+    border: none;
+    background: none;
+    color: var(--meta);
+    cursor: pointer;
+    font-size: 0.95rem;
+    padding: 0;
+  }
+  #fold-btn:hover { color: var(--text); }
+
+  
+  .player.collapsed {
+    width: auto;
+    padding-left: 1rem;
+  }
+  .player.collapsed .player-title,
+  .player.collapsed .player-body {
+    display: none;
+  }
   #play-btn {
     border: 1px solid var(--line);
     background: transparent;
