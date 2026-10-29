@@ -6,7 +6,7 @@ permalink: /gallery/
 
 <h2>漫画</h2>
 <ul class="post-list">
-  <li><a href="{{ '/gallery/manga/' | relative_url }}">复活赛 </a></li>
+  <li><a href="{{ '/gallery/manga/' | relative_url }}">-复活赛 </a></li>
 </ul>
 
 
