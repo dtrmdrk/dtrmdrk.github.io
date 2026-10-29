@@ -25,11 +25,11 @@ body.dark {
 }
 
 body.sepia {
-  --bg: #e8dcc0;
-  --text: #4a3423;
-  --link: #9c5c1c;
-  --line: #b8a684;
-  --meta: #8a7a5c;
+  --bg: #ECDFD2;
+  --text: #081849;
+  --link: #213885;
+  --line: #5F3475;
+  --meta: #893172;
 }
 
 body.green {
