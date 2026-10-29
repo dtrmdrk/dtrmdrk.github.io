@@ -9,6 +9,8 @@ permalink: /gallery/
   <li><a href="{{ '/gallery/manga/' | relative_url }}">复活赛 </a></li>
 </ul>
 
+
+
 <h2>待施工</h2>
 <ul class="post-list">
 {% for post in site.categories.gallery %}
