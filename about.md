@@ -4,8 +4,9 @@ title: 关于
 permalink: /about/
 ---
 
-邮箱：[dtrmdrk@proton.me](mailto:dtrmdrk@proton.me)
 
-提问箱： [NekoBox](https://box.n3ko.cc/_/dtrmdrk)
+- 邮箱：<a href="mailto:dtrmdrk@proton.me">dtrmdrk@proton.me</a>
 
-同人: [ao3](https://archiveofourown.org/users/dtrmdrk)
+- 提问箱：<a href="https://box.n3ko.cc/_/dtrmdrk" target="_blank" rel="noopener">NekoBox</a>
+
+- rgg同人：<a href="https://archiveofourown.org/users/dtrmdrk" target="_blank" rel="noopener">ao3</a>
