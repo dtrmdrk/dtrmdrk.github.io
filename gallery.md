@@ -6,10 +6,6 @@ permalink: /gallery/
 
 ## 漫画
 
-<ul class="post-list">
-  <li><a href="{{ '/gallery/manga/' | relative_url }}">复活赛</a></li>
-</ul>
-
 ---
 
 ## 待施工
