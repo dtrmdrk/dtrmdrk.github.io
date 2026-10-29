@@ -4,12 +4,6 @@ title: 图集
 permalink: /gallery/
 ---
 
-## 漫画
-
----
-
-## 待施工
-
 <ul class="post-list">
 {% for post in site.categories.gallery %}
 <li>
