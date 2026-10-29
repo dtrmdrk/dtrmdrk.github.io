@@ -288,6 +288,24 @@ article img { max-width: 100%; }
 .reader-mode main.container { max-width: none; }
 
 
+/* 漫画入口按钮 */
+.manga-entry {
+  display: block;              /* 独占一行 */
+  margin: 1.5rem 0;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.manga-entry:hover {
+  border-color: var(--link);
+  color: var(--link);          /* 悬停时整体变色 */
+}
+
+
+
 /* ===== 右侧播放器（仅桌面端显示） ===== */
 .player {
   display: none;               /* 手机端隐藏 */
