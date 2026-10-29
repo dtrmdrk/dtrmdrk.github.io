@@ -32,6 +32,16 @@ body.sepia {
   --meta: #8a7a5c;
 }
 
+body.green {
+  --bg: #CFE8CC;
+  --text: #3D405B;
+  --link: #F4ACB7;
+  --line: #FFE5D9;
+  --meta: #7FB685;
+}
+
+
+
 /* ===== 导航（默认 = 手机端顶部横排） ===== */
 nav.sidebar {
   display: flex;
