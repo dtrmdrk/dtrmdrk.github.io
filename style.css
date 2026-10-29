@@ -155,6 +155,48 @@ article strong { color: var(--text); font-weight: 700; }
 /* 文章里的图片不撑破容器 */
 article img { max-width: 100%; }
 
+/* ===== 书页排版 v2 ===== */
+
+/* 核心：把文章栏收窄到阅读舒适的宽度 */
+article {
+  max-width: 42em;        /* 约 42 个字符宽，书籍标准行长 */
+  font-size: 1rem;
+}
+
+/* 标题层级拉开 */
+article h1 {
+  font-size: 2rem;
+  line-height: 1.3;
+  margin-bottom: 0.6rem;
+}
+article h2 {
+  margin-top: 2.5rem;
+  font-size: 1.3rem;
+}
+article h3 { font-size: 1.1rem; }
+
+/* 日期行缩小、留白拉开 */
+article .post-meta {
+  margin-bottom: 2rem;
+}
+
+/* 段落：行高稍微收紧，段距承担分隔 */
+article p {
+  margin: 1rem 0;
+  line-height: 1.75;
+}
+
+/* 列表：紧凑化 */
+article ul, article ol { padding-left: 1.4rem; }
+article li {
+  margin: 0.15rem 0;
+  line-height: 1.7;
+}
+
+
+
+
+
 /* ===== 标签 ===== */
 .tag {
   display: inline-block;
