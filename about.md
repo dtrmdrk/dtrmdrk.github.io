@@ -4,7 +4,7 @@ title: 关于
 permalink: /about/
 ---
 
-##CONTACT
+## CONTACT
 
 - 邮箱：<a href="mailto:dtrmdrk@proton.me">dtrmdrk@proton.me</a>
 
