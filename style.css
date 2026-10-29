@@ -69,7 +69,6 @@ nav.sidebar a:hover { color: var(--text); }
 /* ===== 首页大标题 / 时钟 ===== */
 #clock-title {
   font-variant-numeric: tabular-nums;
-  min-width: 8ch;
   text-align: center;
   transition: opacity 0.8s ease;
 }
@@ -154,7 +153,11 @@ article pre {
 }
 article pre code { background: none; padding: 0; }
 
-article hr { border: none; border-top: 1px solid var(--line); margin: 2.5rem 0; }
+hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 2.5rem 0;
+}
 
 article strong { color: var(--text); font-weight: 700; }
 
