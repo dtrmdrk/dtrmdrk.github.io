@@ -6,9 +6,7 @@ body {
   --line: #EC4D25;
   --meta: #CDCDCF;
 
-
   font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-
 
   line-height: 1.8;
   color: var(--text);
@@ -104,7 +102,7 @@ a { color: var(--link); }
   width: 100%;
 }
 
-/* 文章内标题层级 */
+
 article h1 { font-size: 1.9rem; margin: 0 0 0.5rem; }
 article h2 {
   font-size: 1.35rem;
@@ -114,14 +112,14 @@ article h2 {
 }
 article h3 { font-size: 1.15rem; margin-top: 1.6rem; }
 
-/* 段落呼吸感 */
+
 article p { margin: 1rem 0; }
 
-/* 列表 */
+
 article ul, article ol { padding-left: 1.6rem; }
 article li { margin: 0.3rem 0; }
 
-/* 引用块：左侧竖线 + 变灰，"别人的话"的感觉 */
+
 article blockquote {
   margin: 1.2rem 0;
   padding: 0.1rem 1.2rem;
@@ -129,7 +127,7 @@ article blockquote {
   color: var(--meta);
 }
 
-/* 行内代码：小灰底 */
+
 article code {
   background: rgba(127, 127, 127, 0.15);
   padding: 0.1rem 0.4rem;
@@ -137,25 +135,24 @@ article code {
   font-size: 0.88em;
 }
 
-/* 代码块：整段深色底 */
+
 article pre {
   background: rgba(127, 127, 127, 0.12);
   padding: 1rem 1.2rem;
   border-radius: 8px;
-  overflow-x: auto;      /* 长代码可以横滑 */
+  overflow-x: auto;     
 }
 article pre code { background: none; padding: 0; }
 
-/* 分割线 */
 article hr { border: none; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 
-/* 加粗稍微加重 */
 article strong { color: var(--text); font-weight: 700; }
 
-/* 文章里的图片不撑破容器 */
 article img { max-width: 100%; }
 
-
+article {
+  font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", serif;
+}
 
 
 
