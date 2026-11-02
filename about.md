@@ -10,4 +10,3 @@ permalink: /about/
 
 - 提问箱：<a href="https://box.n3ko.cc/_/dtrmdrk" target="_blank" rel="noopener">NekoBox</a>
 
-- 同人：<a href="https://archiveofourown.org/users/dtrmdrk" target="_blank" rel="noopener">ao3</a>
