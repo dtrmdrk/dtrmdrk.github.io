@@ -18,6 +18,8 @@
     <button id="theme-toggle">☽</button>
   </nav>
 
+
+  
   <main class="container">
     {{ content }}
   </main>
@@ -70,6 +72,14 @@
         });
       }
     }
+
+   document.addEventListener('contextmenu', e => {
+  if (e.target.tagName === 'IMG') e.preventDefault();
+});
+document.addEventListener('dragstart', e => {
+  if (e.target.tagName === 'IMG') e.preventDefault();
+});
+
 
     
     const btn = document.getElementById('theme-toggle');
