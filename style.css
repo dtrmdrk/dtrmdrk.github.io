@@ -54,6 +54,9 @@ nav.sidebar a { color: var(--meta); text-decoration: none; }
 nav.sidebar a:hover { color: var(--text); }
 
 #theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-left: auto;
   border: 1px solid var(--line);
   background: transparent;
@@ -63,6 +66,7 @@ nav.sidebar a:hover { color: var(--text); }
   cursor: pointer;
   font-size: 1rem;
 }
+
 
 
 #clock-title {
