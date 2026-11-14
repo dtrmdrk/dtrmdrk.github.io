@@ -482,13 +482,10 @@ summary {
 summary:hover { color: var(--text); }
 
 
-main.container {
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - 12rem);  
-}
+
 
 .site-footer {
+  display: inline-flex;
   margin-top: auto;                 
   padding-top: 1.2rem;
   border-top: 1px solid var(--line);
