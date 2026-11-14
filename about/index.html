@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌙</text></svg>">
+  <title>关于</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav class="sidebar">
+    <a href="/">首页</a>
+    <a href="/archive/">索引</a>
+    <a href="/article/">文章</a>
+    <a href="/gallery/">图集</a>
+    <a href="/about/">关于</a>
+    <button id="theme-toggle">☽</button>
+  </nav>
+
+
+  
+  <main class="container">
+    <h2 id="contact">CONTACT</h2>
+
+<ul>
+  <li>
+    <p>邮箱：<a href="mailto:dtrmdrk@proton.me">dtrmdrk@proton.me</a></p>
+  </li>
+  <li>
+    <p>提问箱：<a href="https://box.n3ko.cc/_/dtrmdrk" target="_blank" rel="noopener">NekoBox</a></p>
+  </li>
+</ul>
+
+
+    <footer class="site-footer">
+      <p>© 2026 dtrmdrk · All Rights Reserved</p>
+      <p>Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>  · Hosted on GitHub Pages</p>
+    </footer>
+  </main>
+
+
+
+   <aside class="player" id="player">
+    <div class="player-head">
+      <p class="player-title">♪ 播放器</p>
+      <button id="fold-btn" title="折叠 / 展开">—</button>
+    </div>
+    <div class="player-body">
+      <audio id="bgm" src="/assets/music/Projectstring.mp3"></audio>
+      <div class="player-bar">
+        <button id="play-btn">▶</button>
+        <span id="track-name">Track 01</span>
+        <span id="track-time">0:00 / 0:00</span>
+      </div>
+      <input type="range" id="seek" min="0" max="100" value="0">
+      <div class="vol-row">
+        <span class="vol-icon">📢</span>
+        <input type="range" id="volume" min="0" max="1" step="0.05" value="1">
+      </div>
+    </div>
+   </aside>
+  <script>
+
+        
+    const audio = document.getElementById('bgm');
+    const playBtn = document.getElementById('play-btn');
+    if (audio && playBtn) {
+      const seek = document.getElementById('seek');
+      const timeEl = document.getElementById('track-time');
+      const volEl = document.getElementById('volume');
+
+      const fmt = t => `${Math.floor(t/60)}:${String(Math.floor(t%60)).padStart(2,'0')}`;
+      const updateTime = () => { if (timeEl && audio.duration) timeEl.textContent = `${fmt(audio.currentTime)} / ${fmt(audio.duration)}`; };
+      const saveState = () => { try {
+        localStorage.setItem('player-pos', String(audio.currentTime));
+        localStorage.setItem('player-was-playing', audio.paused ? '0' : '1');
+      } catch(e){} };
+
+     
+      const savedPos = parseFloat(localStorage.getItem('player-pos') || '0');
+      if (savedPos > 0.5) audio.currentTime = savedPos;
+      if (localStorage.getItem('player-was-playing') === '1') {
+        audio.play().then(() => { playBtn.textContent = '❚❚'; }).catch(() => {});
+      }
+
+      playBtn.addEventListener('click', () => {
+        if (audio.paused) { audio.play(); playBtn.textContent = '❚❚'; }
+        else { audio.pause(); playBtn.textContent = '▶'; }
+        saveState();
+      });
+      audio.addEventListener('timeupdate', () => {
+        if (audio.duration) seek.value = (audio.currentTime / audio.duration) * 100;
+        updateTime();
+        saveState();              
+      });
+      audio.addEventListener('loadedmetadata', updateTime);
+      seek.addEventListener('input', () => { audio.currentTime = (seek.value / 100) * audio.duration; });
+      audio.addEventListener('ended', () => { playBtn.textContent = '▶'; saveState(); });
+
+     
+      if (volEl) {
+        volEl.value = localStorage.getItem('player-vol') || '1';
+        audio.volume = parseFloat(volEl.value);
+        volEl.addEventListener('input', () => {
+          audio.volume = parseFloat(volEl.value);
+          localStorage.setItem('player-vol', volEl.value);
+        });
+      }
+
+        
+       const player = document.getElementById('player');
+       const foldBtn = document.getElementById('fold-btn');
+           if (player && foldBtn) {
+             if (localStorage.getItem('player-folded') !== '0') {
+               player.classList.add('collapsed');
+               foldBtn.textContent = '♪';
+             }
+             foldBtn.addEventListener('click', () => {
+               const folded = player.classList.toggle('collapsed');
+               foldBtn.textContent = folded ? '♪' : '—';
+               localStorage.setItem('player-folded', folded ? '1' : '0');
+             });
+           }
+    }
+
+   document.addEventListener('contextmenu', e => {
+  if (e.target.tagName === 'IMG') e.preventDefault();
+});
+document.addEventListener('dragstart', e => {
+  if (e.target.tagName === 'IMG') e.preventDefault();
+});
+
+
+    
+    const btn = document.getElementById('theme-toggle');
+    const themes = ['light', 'dark', 'sepia', 'green'];
+    const icons = { light: '☽', dark: '☀︎', sepia: '✑', green: '♤' };
+
+    let currentTheme = localStorage.getItem('theme');
+
+    function applyTheme(name) {
+      document.body.classList.remove(...themes);
+      if (name !== 'light') document.body.classList.add(name);
+      btn.textContent = icons[name];
+    }
+
+    function themeByTime() {
+      const h = new Date().getHours();
+      return (h >= 19 || h < 7) ? 'dark' : 'light';
+    }
+
+    if (currentTheme === null) {
+      currentTheme = themeByTime();
+    }
+    applyTheme(currentTheme);
+
+    btn.addEventListener('click', () => {
+      currentTheme = themes[(themes.indexOf(currentTheme) + 1) % themes.length];
+      applyTheme(currentTheme);
+      localStorage.setItem('theme', currentTheme);
+    });
+
+   
+    const titleEl = document.getElementById('clock-title');
+
+    function tick() {
+      const now = new Date();
+      const time = now.toLocaleDateString('zh-CN') + ' ' + now.toLocaleTimeString('zh-CN', { hour12: false });
+      if (titleEl) {
+        titleEl.textContent = time;
+      }
+      document.title = time;
+      if (localStorage.getItem('theme') === null) {
+        currentTheme = themeByTime();
+        applyTheme(currentTheme);
+      }
+    }
+
+    if (titleEl) {
+      const firstVisit = !localStorage.getItem('visited');
+      titleEl.textContent = firstVisit ? 'WELCOME TO MY BLOG' : 'WELCOME BACK';
+      localStorage.setItem('visited', '1');
+
+      setTimeout(() => {
+        titleEl.classList.add('fade-out');
+        setTimeout(() => {
+          tick();
+          setInterval(tick, 1000);
+          titleEl.classList.remove('fade-out');
+        }, 800);
+      }, 3000);
+    } else {
+      setInterval(tick, 1000);
+    }
+  </script>
+</body>
+</html>
