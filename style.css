@@ -46,7 +46,7 @@ nav.sidebar {
   gap: 1.5rem;
   align-items: center;
   border-bottom: 2px solid var(--line);
-  padding-bottom: 0.8rem;
+  padding-bottom: 0rem;
   margin-bottom: 2rem;
   flex-wrap: wrap;
 }
