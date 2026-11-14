@@ -483,11 +483,11 @@ summary:hover { color: var(--text); }
 
 
 .site-footer {
-  margin-top: 4rem;              
-  padding-top: 1.2rem;
-  border-top: 1px solid var(--line);
+  margin-top: auto;       
+  font-size: 0.72rem;
+  line-height: 1.9;
   color: var(--meta);
-  font-size: 0.8rem;
-  line-height: 2.1;
 }
+.site-footer p { margin: 0.1rem 0; }
+  
 .site-footer a { color: var(--meta); text-decoration: none; }
