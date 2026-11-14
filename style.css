@@ -264,7 +264,7 @@ article img { max-width: 100%; }
   body {
     max-width: none;
     margin: 0;
-    padding: 2rem 3rem;
+    padding: 2rem 3rem 0;
     display: flex;
     justify-content: center;      
     gap: 3rem;
@@ -274,7 +274,7 @@ article img { max-width: 100%; }
     flex-direction: column;      
     align-items: flex-start;
     align-self: stretch;
-    min-height: calc(100vh - 4rem);
+    min-height: calc(100vh - 5rem);
     border-bottom: none;
     border-right: 2px solid var(--line);
     padding: 0.5 0.5rem 0 0;
