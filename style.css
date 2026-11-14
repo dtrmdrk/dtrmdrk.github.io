@@ -499,5 +499,5 @@ main.container {
 
 .site-footer p { margin: 0.1rem 0; }
 
-.site-footer a { color: var(--meta); text-decoration: none; }
+.site-footer a { color: var(--link); text-decoration: none; }
 
