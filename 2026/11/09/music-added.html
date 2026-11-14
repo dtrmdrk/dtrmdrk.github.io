@@ -161,7 +161,7 @@ document.addEventListener('dragstart', e => {
     function applyTheme(name) {
       document.body.classList.remove(...themes);
       if (name !== 'light') document.body.classList.add(name);
-      btn.textContent = icons[name];
+      btn.innerHTML = icons[name];
     }
 
     function themeByTime() {
