@@ -36,7 +36,7 @@ body.green {
   --text: #342005;
   --link: #047C58;
   --line: #2F4D13;
-  --meta: #8C886b;
+  --meta: #8C886B;
 }
 
 
@@ -299,7 +299,6 @@ article img { max-width: 100%; }
 
 .reader-mode nav.sidebar { display: none; }
 .reader-mode main.container { max-width: none; }
-
 
 
 .manga-entry {
