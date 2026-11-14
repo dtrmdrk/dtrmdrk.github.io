@@ -485,8 +485,7 @@ summary:hover { color: var(--text); }
 
 
 .site-footer {
-  display: inline-flex;
-  margin-top: auto;                 
+  margin-top: 4rem;                 
   padding-top: 1.2rem;
   border-top: 1px solid var(--line);
   color: var(--meta);
