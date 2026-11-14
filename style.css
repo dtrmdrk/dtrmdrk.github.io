@@ -491,3 +491,8 @@ summary:hover { color: var(--text); }
 .site-footer p { margin: 0.1rem 0; }
   
 .site-footer a { color: var(--meta); text-decoration: none; }
+
+
+@media (max-width: 899px) {
+  .site-footer { display: none; }
+}
