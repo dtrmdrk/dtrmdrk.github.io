@@ -481,11 +481,12 @@ summary {
 }
 summary:hover { color: var(--text); }
 
+main.container {
+  min-height: calc(100vh - 10rem);  
+}
 
 .site-footer {
-  display: flex;
-  margin-top: 4rem;    
-  margin-left: auto;
+  margin-top: auto;    
   padding-top: 1.2rem;
   border-top: 1px solid var(--line);
   color: var(--meta);
