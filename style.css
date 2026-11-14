@@ -482,12 +482,6 @@ summary {
 summary:hover { color: var(--text); }
 
 
-main.container {
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - 20rem);   
-}
-
 .site-footer {
   margin-top: 4rem;               
   padding-top: 1.2rem;
