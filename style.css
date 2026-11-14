@@ -424,6 +424,13 @@ article img { max-width: 100%; }
     box-sizing: border-box;
   }
 
+  .player-title { display: none; }      
+
+  .player-head {
+    order: 2;                            
+    margin-left: auto;                   
+  }
+  
   body { padding-bottom: 4.5rem; }   
 
   .vol-row { display: none; }        
