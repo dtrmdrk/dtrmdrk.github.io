@@ -485,7 +485,7 @@ summary:hover { color: var(--text); }
 main.container {
   display: flex;
   flex-direction: column;
-  min-height: calc(90vh - 4rem);  
+  min-height: calc(100vh - 8rem);  
 }
 
 .site-footer {
