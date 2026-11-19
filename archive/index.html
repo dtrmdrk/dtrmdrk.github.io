@@ -193,7 +193,11 @@ if (urlTag) searchTag(urlTag);
         index = i;
         audio.src = tracks[i].src;
         nameEl.textContent = tracks[i].name;
-        try { audio.currentTime = parseFloat(localStorage.getItem('player-pos-' + i) || '0'); } catch(e) {}
+        let pos = parseFloat(localStorage.getItem('player-pos-' + i) || '0');
+        try {
+          if (audio.duration && pos > audio.duration - 5) pos = 0;  
+          audio.currentTime = pos;
+        } catch(e) {}
         seek.value = 0;
         if (autoplay) audio.play().then(() => { playBtn.textContent = '❚❚'; }).catch(() => {});
         saveState();
@@ -214,7 +218,10 @@ if (urlTag) searchTag(urlTag);
         loadTrack((index + 1) % tracks.length, true);   
       });
 
-      audio.addEventListener('ended', () => nextBtn.click());
+      audio.addEventListener('ended', () => {
+        localStorage.setItem('player-pos-' + index, '0');   
+        nextBtn.click();
+      });
 
       audio.addEventListener('timeupdate', () => {
         if (audio.duration) seek.value = (audio.currentTime / audio.duration) * 100;
