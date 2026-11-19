@@ -435,9 +435,11 @@ article img { max-width: 100%; }
   .player {
     display: flex;
     position: fixed;
-    left: 0.8rem;
+    left: auto;
     right: 0.8rem;
     bottom: 0.8rem;
+    width: calc(50% - 1.2rem); 
+    max-width: 320px; 
     flex-direction: row;
     align-items: center;
     gap: 0.5rem;
@@ -465,7 +467,7 @@ article img { max-width: 100%; }
 
   body { padding-bottom: 5rem; }
 
-  .vol-group { display: none; }
+  .vol-group #volume { display: none; }
   
   .player.collapsed {
     left: auto;
