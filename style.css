@@ -424,11 +424,7 @@ article img { max-width: 100%; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-}
-
-
-
-  
+}  
 }
  
 @media (max-width: 899px) {
@@ -444,7 +440,7 @@ article img { max-width: 100%; }
     gap: 0.5rem;
     background: var(--bg);
     border: 1px solid var(--line);
-    border-radius: 999px;       
+    border-radius: 14px;       
     padding: 0.35rem 0.8rem;
     margin: 0;
     z-index: 100;
@@ -466,7 +462,7 @@ article img { max-width: 100%; }
 
   body { padding-bottom: 5rem; }
 
-  .vol-group #volume { display: none; }
+  .vol-group { display: none; }
   
   .player.collapsed {
     left: auto;
@@ -478,9 +474,7 @@ article img { max-width: 100%; }
   .player.collapsed .player-body {
     display: none;                    
   }
-  .player.collapsed 
-  
-  #fold-btn {
+  .player.collapsed #fold-btn {
     font-size: 1.05rem;
     border: none;
     background: none;
