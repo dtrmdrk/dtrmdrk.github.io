@@ -356,6 +356,60 @@ summary:hover {
   color: var(--text);
 }
 
+mark.g {
+  background: rgba(4, 124, 88, 0.25);
+  color: inherit;
+}
+
+mark.b {
+  background: rgba(33, 56, 133, 0.22);
+  color: inherit;
+}
+
+mark.r {
+  background: rgba(236, 77, 37, 0.2);
+  color: inherit;
+}
+
+mark.y {
+  background: rgba(226, 232, 0, 0.3);
+  color: inherit;
+}
+
+mark.note {
+  position: relative;
+  background: none;
+  color: inherit;
+  padding: 0;
+  cursor: help;
+  border-bottom: 2px dotted var(--link);
+}
+
+mark.note::after {
+  content: attr(data-note);
+  position: absolute;
+  bottom: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text);
+  color: var(--bg);
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  width: max-content;
+  max-width: 220px;
+  white-space: normal;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+  z-index: 60;
+}
+
+mark.note:hover::after {
+  opacity: 1;
+}
+
 .player {
   display: none;
 }
