@@ -277,7 +277,7 @@ article img { max-width: 100%; }
     min-height: calc(100vh - 5rem);
     border-bottom: none;
     border-right: 2px solid var(--line);
-    padding: 0.5 0.5rem 0 0;
+    padding: 0.5rem 0.5rem 0 0;
     width: 100px;
     flex-shrink: 0; 
     gap: 4rem;                    
@@ -460,7 +460,9 @@ article img { max-width: 100%; }
     gap: 0.3rem;
   }   
 
-  body { padding-bottom: 5rem; }
+  #fold-btn { margin-right: 0.2rem; }
+
+  body { padding-bottom: 3.5rem; }
 
   .vol-group { display: none; }
   
@@ -479,7 +481,6 @@ article img { max-width: 100%; }
     border: none;
     background: none;
     color: var(--meta);
-    margin-right: 0.2rem; 
   }
 
   .reader-mode .player { display: none; }
