@@ -365,26 +365,6 @@ article img { max-width: 100%; }
   }
   #fold-btn:hover { color: var(--text); }
 
-  .vol-row {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  }
-  .vol-icon {
-    font-size: 0.85rem; 
-  }
-
-  #next-btn {
-  border: 1px solid var(--line);
-  background: transparent;
-  color: var(--text);
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  cursor: pointer;
-  font-size: 0.8rem;
-  }
-
   .player.collapsed {
     width: auto;
     padding-left: 1rem;
@@ -441,17 +421,13 @@ article img { max-width: 100%; }
   justify-content: center;
 }
 #play-btn { width: 2.4rem; height: 2.4rem; font-size: 0.95rem; }
-#shuffle-btn.active, #repeat-btn.active {
-  color: var(--link);
-  border-color: var(--link);
-}
 
 
 .volume-popup { display: none; }
 .volume-popup.show {
   display: block;
   position: absolute;
-  bottom: 130%;              
+  bottom: 70%;              
   right: 0;
   width: 110px;
   background: var(--bg);
@@ -461,7 +437,6 @@ article img { max-width: 100%; }
   z-index: 10;
   accent-color: var(--link);
 }
-
   
 }
  
@@ -493,7 +468,7 @@ article img { max-width: 100%; }
   
   body { padding-bottom: 4.5rem; }   
 
-  .vol-row { display: none; }       
+  .volume-popup { display: none; }       
 
   #next-btn {
   border: 1px solid var(--line);
