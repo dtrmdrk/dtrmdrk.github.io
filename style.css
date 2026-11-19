@@ -466,21 +466,7 @@ article img { max-width: 100%; }
     margin-left: auto;                   
   }
   
-  body { padding-bottom: 4.5rem; }   
-
-  .volume-popup { display: none; }       
-
-  #next-btn {
-  border: 1px solid var(--line);
-  background: transparent;
-  color: var(--text);
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  cursor: pointer;
-  font-size: 0.8rem;
-  }
-
+  body { padding-bottom: 7rem; }   
   
   .player.collapsed {
     left: auto;
