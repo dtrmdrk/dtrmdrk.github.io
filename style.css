@@ -377,7 +377,6 @@ article img { max-width: 100%; }
   
 .player-track {
   margin: 0;
-  text-align: center;
   font-size: 0.95em;
   color: var(--text);
   white-space: nowrap;
