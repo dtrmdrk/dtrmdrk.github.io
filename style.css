@@ -374,6 +374,17 @@ article img { max-width: 100%; }
     font-size: 0.85rem; 
   }
 
+  #next-btn {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  }
+
   .player.collapsed {
     width: auto;
     padding-left: 1rem;
@@ -433,7 +444,18 @@ article img { max-width: 100%; }
   
   body { padding-bottom: 4.5rem; }   
 
-  .vol-row { display: none; }        
+  .vol-row { display: none; }       
+
+  #next-btn {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  }
 
   
   .player.collapsed {
