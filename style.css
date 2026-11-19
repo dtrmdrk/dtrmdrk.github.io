@@ -403,10 +403,15 @@ article img { max-width: 100%; }
 .player-controls {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;   
   gap: 0.5rem;
-  position: relative;        
+  position: relative;
 }
+.transport { display: flex; align-items: center; gap: 0.5rem; }
+.vol-group { display: flex; align-items: center; gap: 0.4rem; }
+.vol-group #volume { width: 64px; }   
+
+
 .player-controls button {
   border: 1px solid var(--line);
   background: transparent;
@@ -423,20 +428,6 @@ article img { max-width: 100%; }
 #play-btn { width: 2.4rem; height: 2.4rem; font-size: 0.95rem; }
 
 
-.volume-popup { display: none; }
-.volume-popup.show {
-  display: block;
-  position: absolute;
-  bottom: 70%;              
-  right: 0;
-  width: 110px;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 0.4rem 0.5rem;
-  z-index: 10;
-  accent-color: var(--link);
-}
   
 }
  
@@ -466,7 +457,7 @@ article img { max-width: 100%; }
     margin-left: auto;                   
   }
   
-  body { padding-bottom: 7rem; }   
+  body { padding-bottom: 3.5rem; }   
   
   .player.collapsed {
     left: auto;
