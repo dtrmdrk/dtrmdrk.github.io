@@ -441,7 +441,6 @@ article img { max-width: 100%; }
     width: calc(50% - 1.2rem); 
     max-width: 320px; 
     flex-direction: row;
-    align-items: center;
     gap: 0.5rem;
     background: var(--bg);
     border: 1px solid var(--line);
