@@ -510,7 +510,7 @@ summary:hover {
     margin-left: auto;
   }
   #fold-btn {
-    margin-right: 0.2rem;
+    margin-right: 0.5rem;
   }
   .player-body {
     display: flex;
@@ -534,7 +534,6 @@ summary:hover {
     border: none;
     background: none;
     color: var(--meta);
-    margin-right: 0.2rem;
   }
   .reader-mode .player {
     display: none;
