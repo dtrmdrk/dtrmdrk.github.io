@@ -444,12 +444,24 @@ article img { max-width: 100%; }
     gap: 0.8rem;
     background: var(--bg);
     border: 1px solid var(--line);
-    border-radius: 900px;       
+    border-radius: 999px;       
     padding: 0.5rem 1rem;
     margin: 0;
     z-index: 100;
     box-sizing: border-box;
   }
+
+  .player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;   
+  gap: 0.5rem;
+  position: relative;
+}
+  .transport { display: flex; align-items: center; gap: 0.5rem; }
+  .vol-group { display: flex; align-items: center; gap: 0.4rem; }
+  .vol-group #volume { width: 64px; }   
+
 
   .player-title { display: none; }      
 
