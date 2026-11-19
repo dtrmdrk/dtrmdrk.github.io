@@ -464,6 +464,8 @@ article img { max-width: 100%; }
   }   
 
   body { padding-bottom: 5rem; }
+
+  .vol-group { display: none; }
   
   .player.collapsed {
     left: auto;
