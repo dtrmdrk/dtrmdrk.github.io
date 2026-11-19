@@ -479,6 +479,7 @@ article img { max-width: 100%; }
     border: none;
     background: none;
     color: var(--meta);
+    margin-right: 0.2rem; 
   }
 
   .reader-mode .player { display: none; }
