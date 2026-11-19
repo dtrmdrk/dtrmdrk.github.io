@@ -47,20 +47,22 @@
       <p class="player-title">♪ 播放器</p>
       <button id="fold-btn" title="折叠 / 展开">—</button>
     </div>
-    <div class="player-body">
+        <div class="player-body">
       <audio id="bgm"></audio>
-      <div class="player-bar">
+      <p id="track-name" class="player-track">Track 01</p>
+      <div class="player-time-row">
+        <span id="track-time">0:00 / 0:00</span>
+        <input type="range" id="seek" min="0" max="100" value="0">
+      </div>
+      <div class="player-controls">
+        <button id="shuffle-btn" title="随机播放">🔀</button>
+        <button id="prev-btn" title="上一首">⏮</button>
         <button id="play-btn">▶</button>
         <button id="next-btn" title="下一首">⏭</button>
-        <span id="track-name">Track 01</span>
-        <span id="track-time">0:00 / 0:00</span>
+        <button id="repeat-btn" title="循环" class="active">🔁</button>
+        <button id="vol-btn" title="音量">🔊</button>
+        <input type="range" id="volume" class="volume-popup" min="0" max="1" step="0.05" value="1">
       </div>
-      <input type="range" id="seek" min="0" max="100" value="0">
-      <div class="vol-row">        
-        <input type="range" id="volume" min="0" max="1" step="0.05" value="1">
-        <span class="vol-icon">📢</span>
-      </div>
-    </div>
    </aside>
   <script>
 
@@ -119,11 +121,49 @@
         loadTrack((index + 1) % tracks.length, true);   
       });
 
-      audio.addEventListener('ended', () => {
-        localStorage.setItem('player-pos-' + index, '0');   
-        nextBtn.click();
+            
+      let shuffle = false;
+      let repeatAll = true;
+
+      function advance() {
+        if (shuffle && tracks.length > 1) {
+          let n;
+          do { n = Math.floor(Math.random() * tracks.length); } while (n === index);
+          loadTrack(n, true);
+        } else if (index < tracks.length - 1) {
+          loadTrack(index + 1, true);
+        } else if (repeatAll) {
+          loadTrack(0, true);
+        } else {
+          playBtn.textContent = '▶';          
+        }
+      }
+
+      document.getElementById('shuffle-btn').addEventListener('click', e => {
+        shuffle = !shuffle;
+        e.currentTarget.classList.toggle('active', shuffle);
       });
 
+      document.getElementById('repeat-btn').addEventListener('click', e => {
+        repeatAll = !repeatAll;
+        e.currentTarget.classList.toggle('active', repeatAll);
+      });
+
+      document.getElementById('prev-btn').addEventListener('click', () => {
+        localStorage.setItem('player-pos-' + index, '0');
+        loadTrack((index - 1 + tracks.length) % tracks.length, true);
+      });
+
+      const volBtn = document.getElementById('vol-btn');
+      volBtn.addEventListener('click', () => volEl.classList.toggle('show'));
+
+      
+      audio.addEventListener('ended', () => {
+        localStorage.setItem('player-pos-' + index, '0');
+        advance();
+      });
+
+      nextBtn.addEventListener('click', advance);
       audio.addEventListener('timeupdate', () => {
         if (audio.duration) seek.value = (audio.currentTime / audio.duration) * 100;
         updateTime();
