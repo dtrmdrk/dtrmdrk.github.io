@@ -211,7 +211,7 @@ if (urlTag) searchTag(urlTag);
       });
 
       nextBtn.addEventListener('click', () => {
-        loadTrack((index + 1) % tracks.length, true);   // 循环播放
+        loadTrack((index + 1) % tracks.length, true);   
       });
 
       audio.addEventListener('ended', () => nextBtn.click());
