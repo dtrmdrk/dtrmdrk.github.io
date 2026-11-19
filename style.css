@@ -444,7 +444,7 @@ article img { max-width: 100%; }
     gap: 0.8rem;
     background: var(--bg);
     border: 1px solid var(--line);
-    border-radius: 999px;       
+    border-radius: 900px;       
     padding: 0.5rem 1rem;
     margin: 0;
     z-index: 100;
