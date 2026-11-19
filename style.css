@@ -466,7 +466,7 @@ article img { max-width: 100%; }
   
   .player.collapsed {
     left: auto;
-    right: 1rem;
+    right: 1.2rem;
     width: auto;
     padding: 0.5rem 0.75rem;
   }
