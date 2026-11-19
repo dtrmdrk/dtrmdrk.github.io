@@ -172,7 +172,7 @@ render();
         index = i;
         audio.src = tracks[i].src;
         nameEl.textContent = tracks[i].name;
-        audio.currentTime = parseFloat(localStorage.getItem('player-pos-' + i) || '0');
+        try { audio.currentTime = parseFloat(localStorage.getItem('player-pos-' + i) || '0'); } catch(e) {}
         seek.value = 0;
         if (autoplay) audio.play().then(() => { playBtn.textContent = '❚❚'; }).catch(() => {});
         saveState();
