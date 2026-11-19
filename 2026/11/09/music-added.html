@@ -92,7 +92,7 @@
 
       const tracks = [
         { name: 'Best Before', src: "/assets/music/01.mp3" },
-        { name: '想吃腌橄榄', src: "/assets/music/02.mp3" }
+        { name: 'Olive I Love', src: "/assets/music/02.mp3" }
       ];
 
       let index = parseInt(localStorage.getItem('player-track') || '0', 10);
@@ -106,15 +106,13 @@
         localStorage.setItem('player-track', String(index));
       } catch(e){} };
 
+      let pendingPos = 0;   
+
       function loadTrack(i, autoplay) {
         index = i;
         audio.src = tracks[i].src;
         nameEl.textContent = tracks[i].name;
-        let pos = parseFloat(localStorage.getItem('player-pos-' + i) || '0');
-        try {
-          if (audio.duration && pos > audio.duration - 5) pos = 0;  
-          audio.currentTime = pos;
-        } catch(e) {}
+        pendingPos = parseFloat(localStorage.getItem('player-pos-' + i) || '0');   
         seek.value = 0;
         if (autoplay) audio.play().then(() => { playBtn.textContent = '❚❚'; }).catch(() => {});
         saveState();
@@ -145,9 +143,15 @@
         updateTime();
         saveState();
       });
-      audio.addEventListener('loadedmetadata', updateTime);
-      seek.addEventListener('input', () => { audio.currentTime = (seek.value / 100) * audio.duration; });
 
+
+      audio.addEventListener('loadedmetadata', () => {
+        updateTime();
+        if (audio.duration) {
+          audio.currentTime = (pendingPos > audio.duration - 5) ? 0 : pendingPos;
+        }
+      });
+      
       if (volEl) {
         volEl.value = localStorage.getItem('player-vol') || '1';
         audio.volume = parseFloat(volEl.value);
