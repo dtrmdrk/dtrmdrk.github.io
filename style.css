@@ -393,26 +393,75 @@ article img { max-width: 100%; }
   .player.collapsed .player-body {
     display: none;
   }
-  #play-btn {
-    border: 1px solid var(--line);
-    background: transparent;
-    color: var(--text);
-    border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
-    cursor: pointer;
-  }
-  #track-name {
-    font-size: 0.8em;
-    color: var(--meta);
-  }
 
-  #track-time {
-  font-variant-numeric: tabular-nums;   
-  min-width: 8ch;                       
+  
+.player-track {
+  margin: 0;
+  font-size: 0.95em;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;   
+}
+
+
+.player-time-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.75rem;
   color: var(--meta);
-  font-size: 0.8em;
-  }
+}
+#track-time {
+  font-variant-numeric: tabular-nums;
+  min-width: 8ch;           
+  flex-shrink: 0;
+}
+.player-time-row #seek { flex: 1; }
+
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;        
+}
+.player-controls button {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  border-radius: 50%;
+  width: 1.8rem;
+  height: 1.8rem;
+  cursor: pointer;
+  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+#play-btn { width: 2.4rem; height: 2.4rem; font-size: 0.95rem; }
+#shuffle-btn.active, #repeat-btn.active {
+  color: var(--link);
+  border-color: var(--link);
+}
+
+
+.volume-popup { display: none; }
+.volume-popup.show {
+  display: block;
+  position: absolute;
+  bottom: 130%;              
+  right: 0;
+  width: 110px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.4rem 0.5rem;
+  z-index: 10;
+  accent-color: var(--link);
+}
+
   
 }
  
