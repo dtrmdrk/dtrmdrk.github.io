@@ -366,7 +366,7 @@ summary:hover {
 
 mark.re {
   background: none;
-  color: var(--link);
+  color: inherit;
   padding: 0;
   border-bottom: 2px dotted var(--link);
 }
@@ -374,7 +374,7 @@ mark.re {
 mark.note {
   position: relative;
   background: none;
-  color: inherit;
+  color: var(--link);
   padding: 0;
   cursor: help;
   border-bottom: 2px dotted var(--link);
