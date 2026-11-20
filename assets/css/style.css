@@ -222,6 +222,14 @@ main.container {
   margin: 0 0.4rem 0 0;
 }
 
+.post-updated {
+  margin-left: auto;
+  font-size: 0.75em;
+  color: var(--meta);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
 .tag {
   display: inline-block;
   font-size: 0.75em;
