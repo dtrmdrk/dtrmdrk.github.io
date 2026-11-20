@@ -222,7 +222,7 @@ main.container {
   margin: 0 0.4rem 0 0;
 }
 
-.post-updated {
+.post-revised {
   margin-left: auto;
   font-size: 0.75em;
   color: var(--meta);
