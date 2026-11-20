@@ -365,7 +365,9 @@ summary:hover {
 }
 
 mark.re {
+  background: none;
   color: var(--link);
+  padding: 0;
   border-bottom: 2px dotted var(--link);
 }
 
