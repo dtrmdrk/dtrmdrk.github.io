@@ -418,6 +418,22 @@ mark.note:hover::after {
   opacity: 1;
 }
 
+mark.note.g {
+  background: rgba(4, 124, 88, 0.25);
+}
+
+mark.note.b {
+  background: rgba(33, 56, 133, 0.22);
+}
+
+mark.note.r {
+  background: rgba(236, 77, 37, 0.2);
+}
+
+mark.note.y {
+  background: rgba(226, 232, 0, 0.3);
+}
+
 .player {
   display: none;
 }
