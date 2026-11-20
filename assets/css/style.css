@@ -387,10 +387,30 @@ mark.y {
 mark.note {
   position: relative;
   background: none;
-  color: inherit;
   padding: 0;
   cursor: help;
+  color: var(--link);
   border-bottom: 2px dotted var(--link);
+}
+
+mark.note.r {
+  color: #C94F2E;
+  border-bottom-color: #C94F2E;
+}
+
+mark.note.g {
+  color: #0E7A55;
+  border-bottom-color: #0E7A55;
+}
+
+mark.note.b {
+  color: #2D4BA8;
+  border-bottom-color: #2D4BA8;
+}
+
+mark.note.y {
+  color: #8A7D00;
+  border-bottom-color: #8A7D00;
 }
 
 mark.note::after {
@@ -416,22 +436,6 @@ mark.note::after {
 
 mark.note:hover::after {
   opacity: 1;
-}
-
-mark.note.g {
-  background: rgba(4, 124, 88, 0.25);
-}
-
-mark.note.b {
-  background: rgba(33, 56, 133, 0.22);
-}
-
-mark.note.r {
-  background: rgba(236, 77, 37, 0.2);
-}
-
-mark.note.y {
-  background: rgba(226, 232, 0, 0.3);
 }
 
 .player {
