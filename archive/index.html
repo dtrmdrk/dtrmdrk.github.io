@@ -21,7 +21,7 @@
 
   
   <main class="container">
-    <p><input type="text" id="search" placeholder="请输入关键词…" autocomplete="off" /></p>
+    <p><input type="text" id="search" placeholder="请输入标题或标签" autocomplete="off" /></p>
 
 <div class="tag-cloud">
 
@@ -100,7 +100,7 @@ const results = document.getElementById('results');
 
 function render(list) {
   if (list.length === 0) {
-    results.innerHTML = '<p style="color: var(--meta);">没有找到相关文章。</p>';
+    results.innerHTML = '<p style="color: var(--meta);">没有找到相关记录</p>';
     return;
   }
   results.innerHTML = '<ul class="post-list">' + list.map(p => `
