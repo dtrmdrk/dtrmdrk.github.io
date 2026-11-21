@@ -405,6 +405,50 @@ mark.note:hover::after {
   opacity: 1;
 }
 
+.post-quicknav {
+  display: flex;
+  gap: 0.4rem;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.post-quicknav a {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.1rem 0.55rem;
+  font-size: 0.8em;
+  color: var(--meta);
+  text-decoration: none;
+}
+
+.post-quicknav a:hover {
+  color: var(--link);
+  border-color: var(--link);
+}
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.9em;
+}
+
+.post-nav a {
+  color: var(--meta);
+  text-decoration: none;
+  max-width: 45%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.post-nav a:hover {
+  color: var(--link);
+}
+
 .player {
   display: none;
 }
