@@ -117,7 +117,8 @@ render();
   </main>
 
 
-
+<div class="side-col">
+  
    <aside class="player" id="player">
     <div class="player-head">
       <p class="player-title">♪ 播放器</p>
@@ -143,9 +144,26 @@ render();
       </div>
     </div>
    </aside>
-  <script>
 
-                
+    <aside class="side-tags">
+      
+        <a class="tag tag-link" href="/archive/?tag=notice">notice</a>
+      
+        <a class="tag tag-link" href="/archive/?tag=comic">comic</a>
+      
+        <a class="tag tag-link" href="/archive/?tag=music">music</a>
+      
+        <a class="tag tag-link" href="/archive/?tag=game">game</a>
+      
+        <a class="tag tag-link" href="/archive/?tag=music%3F">music?</a>
+      
+    </aside>
+
+    
+
+  </div>
+
+  <script>                
     const audio = document.getElementById('bgm');
     const playBtn = document.getElementById('play-btn');
     if (audio && playBtn) {
