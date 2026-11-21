@@ -594,6 +594,7 @@ mark.note:hover::after {
     gap: 2rem;
     border-left: 2px solid var(--line);
     padding-left: 2rem;
+    margin-bottom: 2rem;
   }
   .player {
     display: flex;
