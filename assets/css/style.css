@@ -603,13 +603,8 @@ mark.note:hover::after {
     gap: 0.6rem;
     height: fit-content;
   }
-  .side-mid {
-    margin-block: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
   .side-tagnav {
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -658,6 +653,7 @@ mark.note:hover::after {
     text-align: right;
   }
   .side-bottom {
+    margin-top: auto;
     display: flex;
     gap: 0.5rem;
   }
