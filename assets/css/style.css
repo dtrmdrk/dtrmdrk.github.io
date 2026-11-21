@@ -457,19 +457,6 @@ mark.note:hover::after {
   text-align: right;
 }
 
-.post-nav a {
-  color: var(--meta);
-  text-decoration: none;
-  max-width: 45%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.post-nav a:hover {
-  color: var(--link);
-}
-
 .player {
   display: none;
 }
