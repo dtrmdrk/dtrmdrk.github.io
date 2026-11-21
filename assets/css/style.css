@@ -405,25 +405,34 @@ mark.note:hover::after {
   opacity: 1;
 }
 
-.post-quicknav {
-  display: flex;
-  gap: 0.4rem;
-  margin-left: auto;
-  flex-shrink: 0;
+.post-meta {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
-.post-quicknav a {
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 0.1rem 0.55rem;
-  font-size: 0.8em;
+.post-meta p {
+  margin: 0.35rem 0;
+}
+
+.post-tagrow {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.nav-arrow {
+  border: none;
+  background: none;
+  padding: 0 0.15rem;
   color: var(--meta);
   text-decoration: none;
+  font-size: 1rem;
+  line-height: 1;
 }
 
-.post-quicknav a:hover {
+.nav-arrow:hover {
   color: var(--link);
-  border-color: var(--link);
 }
 
 .post-nav {
