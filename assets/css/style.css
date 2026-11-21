@@ -603,6 +603,12 @@ mark.note:hover::after {
     gap: 0.6rem;
     height: fit-content;
   }
+  .side-mid {
+    margin-block: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
   .side-tagnav {
     display: flex;
     flex-direction: column;
@@ -650,6 +656,28 @@ mark.note:hover::after {
   }
   .side-postnav a.right {
     text-align: right;
+  }
+  .side-bottom {
+    margin-top: auto;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .side-bottom a,
+  .side-bottom button {
+    border: 1px solid var(--line);
+    background: none;
+    color: var(--meta);
+    border-radius: 6px;
+    padding: 0.25rem 0.7rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: inherit;
+  }
+  .side-bottom a:hover,
+  .side-bottom button:hover {
+    color: var(--link);
+    border-color: var(--link);
   }
 }
 @media (max-width: 899px) {
