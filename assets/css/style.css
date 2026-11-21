@@ -149,7 +149,7 @@ main.container {
     border-bottom: none;
     border-right: 2px solid var(--line);
     padding: 0.5rem 0.5rem 0 0;
-    width: 130px;
+    width: 100px;
     flex-shrink: 0;
     gap: 4rem;
     flex-wrap: nowrap;
