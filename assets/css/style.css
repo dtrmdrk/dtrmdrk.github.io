@@ -585,10 +585,8 @@ mark.note:hover::after {
 
 @media (min-width: 900px) {
   .side-col {
-    position: sticky;
-    top: 2rem;
-    align-self: flex-start;
-    height: calc(100vh - 5rem);
+    align-self: stretch;
+    min-height: calc(100vh - 5rem);
     width: 200px;
     flex-shrink: 0;
     display: flex;
@@ -604,7 +602,7 @@ mark.note:hover::after {
     height: fit-content;
   }
   .side-tagnav {
-    margin-top: 3rem;
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -634,7 +632,7 @@ mark.note:hover::after {
     color: var(--link);
   }
   .side-postnav {
-    margin-top: 3rem;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
