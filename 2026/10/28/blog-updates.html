@@ -238,6 +238,11 @@
                localStorage.setItem('player-folded', folded ? '1' : '0');
              });
            }
+
+        const backTop = document.getElementById('back-top');
+            if (backTop) backTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
     
 
    document.addEventListener('contextmenu', e => {
