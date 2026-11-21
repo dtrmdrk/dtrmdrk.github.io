@@ -585,11 +585,15 @@ mark.note:hover::after {
 
 @media (min-width: 900px) {
   .side-col {
+    position: sticky;
+    top: 2rem;
+    align-self: flex-start;
+    height: calc(100vh - 5rem);
     width: 240px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 2rem;
     border-left: 2px solid var(--line);
     padding-left: 2rem;
   }
@@ -597,8 +601,6 @@ mark.note:hover::after {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
-    position: sticky;
-    top: 2rem;
     height: fit-content;
   }
   .side-tagnav {
