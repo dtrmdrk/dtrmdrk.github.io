@@ -69,7 +69,7 @@ nav.sidebar a:hover {
   background: transparent;
   color: var(--text);
   border-radius: 6px;
-  padding: 0.2rem 0.6rem;
+  padding: 0.6rem 0.6rem;
   cursor: pointer;
   font-size: 1rem;
 }
@@ -149,7 +149,7 @@ main.container {
     border-bottom: none;
     border-right: 2px solid var(--line);
     padding: 0.5rem 0.5rem 0 0;
-    width: 100px;
+    width: 130px;
     flex-shrink: 0;
     gap: 4rem;
     flex-wrap: nowrap;
