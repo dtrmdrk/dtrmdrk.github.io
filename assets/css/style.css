@@ -601,28 +601,52 @@ mark.note:hover::after {
     top: 2rem;
     height: fit-content;
   }
-  .side-tags {
+  .side-tagnav {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
+    flex-direction: column;
+    gap: 0.5rem;
   }
-  .side-nav {
+  .side-tagnav .tagrow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+  }
+  .side-tagnav .tag {
+    margin-left: 0;
+  }
+  .side-tagnav .nav-arrow {
+    border: none;
+    background: none;
+    padding: 0;
+    width: 1.2rem;
+    text-align: center;
+    flex-shrink: 0;
+    color: var(--meta);
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 1;
+  }
+  .side-tagnav .nav-arrow:hover {
+    color: var(--link);
+  }
+  .side-postnav {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
     font-size: 0.85em;
   }
-  .side-nav a {
+  .side-postnav a {
     color: var(--meta);
     text-decoration: none;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  .side-nav a:hover {
+  .side-postnav a:hover {
     color: var(--link);
   }
-  .side-nav a.right {
+  .side-postnav a.right {
     text-align: right;
   }
 }
@@ -674,6 +698,9 @@ mark.note:hover::after {
     border: none;
     background: none;
     color: var(--meta);
+  }
+  .side-tagnav, .side-postnav {
+    display: none;
   }
   .reader-mode .player {
     display: none;
