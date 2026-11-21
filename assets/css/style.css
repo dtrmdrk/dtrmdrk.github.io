@@ -562,7 +562,7 @@ mark.note:hover::after {
 }
 
 .vol-group #volume {
-  width: 64px;
+  width: 48px;
 }
 
 .player-controls button {
@@ -589,7 +589,7 @@ mark.note:hover::after {
     top: 2rem;
     align-self: flex-start;
     height: calc(100vh - 5rem);
-    width: 240px;
+    width: 200px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
