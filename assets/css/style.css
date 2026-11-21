@@ -584,21 +584,46 @@ mark.note:hover::after {
 }
 
 @media (min-width: 900px) {
+  .side-col {
+    width: 240px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    border-left: 2px solid var(--line);
+    padding-left: 2rem;
+  }
   .player {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
-    width: 240px;
-    flex-shrink: 0;
     position: sticky;
     top: 2rem;
     height: fit-content;
-    border-left: 2px solid var(--line);
-    padding-left: 2rem;
   }
-  .player.collapsed {
-    width: auto;
-    padding-left: 1rem;
+  .side-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .side-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    font-size: 0.85em;
+  }
+  .side-nav a {
+    color: var(--meta);
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .side-nav a:hover {
+    color: var(--link);
+  }
+  .side-nav a.right {
+    text-align: right;
   }
 }
 @media (max-width: 899px) {
