@@ -427,13 +427,34 @@ mark.note:hover::after {
 }
 
 .post-nav {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
   margin-top: 3rem;
   padding-top: 1.2rem;
   border-top: 1px solid var(--line);
   font-size: 0.9em;
+}
+
+.post-nav-slot {
+  min-width: 0;
+}
+
+.post-nav-slot a {
+  display: block;
+  color: var(--meta);
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.post-nav-slot a:hover {
+  color: var(--link);
+}
+
+.post-nav-slot.right {
+  text-align: right;
 }
 
 .post-nav a {
