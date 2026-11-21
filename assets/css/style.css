@@ -634,6 +634,7 @@ mark.note:hover::after {
     color: var(--link);
   }
   .side-postnav {
+    margin-bottom: 3rem;
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
@@ -653,7 +654,7 @@ mark.note:hover::after {
     text-align: right;
   }
   .side-bottom {
-    margin-top: auto;
+    margin-top: 3rem;
     display: flex;
     gap: 0.5rem;
   }
