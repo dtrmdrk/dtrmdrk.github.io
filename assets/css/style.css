@@ -587,7 +587,7 @@ mark.note:hover::after {
   .side-col {
     align-self: stretch;
     min-height: calc(100vh - 5rem);
-    width: 180px;
+    width: 200px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
