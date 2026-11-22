@@ -173,7 +173,7 @@ main.container {
   }
   nav.sidebar a[aria-current] .nav-en {
     display: block;
-    margin-left: -1.2rem;
+    margin-left: -2rem;
     margin-bottom: 0.35rem;
     font-size: 0.8rem;
     font-weight: 700;
@@ -181,7 +181,7 @@ main.container {
     color: var(--link);
   }
   nav.sidebar a[aria-current] .cap {
-    font-family: "Snell Roundhand", "Apple Chancery", "Segoe Script", "Brush Script MT", "Lucida Handwriting", cursive;
+    font-family: "Snell Roundhand", "Apple Chancery", "Brush Script MT", cursive;
     font-size: 2.4rem;
     margin-right: 0.15rem;
     vertical-align: -0.15em;
