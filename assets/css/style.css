@@ -148,7 +148,7 @@ main.container {
     min-height: calc(100vh - 5rem);
     border-bottom: none;
     border-right: 2px solid var(--line);
-    padding: 0.5rem 0.5rem 0 0;
+    padding: 0.5rem 0 0 0;
     width: 100px;
     flex-shrink: 0;
     gap: 4rem;
