@@ -265,7 +265,7 @@ main.container {
 
 .tag {
   display: inline-block;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--meta);
   border: 1px solid var(--line);
   border-radius: 10px;
