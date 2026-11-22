@@ -168,8 +168,6 @@ main.container {
     border-left: none;
     color: var(--text);
     white-space: nowrap;
-    align-self: stretch;
-    text-align: center;
   }
   nav.sidebar a[aria-current]::before {
     content: attr(data-en);
