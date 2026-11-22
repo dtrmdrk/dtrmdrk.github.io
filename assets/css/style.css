@@ -143,7 +143,7 @@ main.container {
   }
   nav.sidebar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     align-self: stretch;
     min-height: calc(100vh - 5rem);
     border-bottom: none;
@@ -159,6 +159,7 @@ main.container {
     font-weight: 600;
     border-left: 2.5px solid var(--line);
     padding-left: 0.7rem;
+    text-align: center;
   }
   nav.sidebar a:hover {
     color: var(--text);
@@ -168,8 +169,6 @@ main.container {
     border-left: none;
     color: var(--text);
     white-space: nowrap;
-    align-self: stretch;
-    text-align: center;
   }
   nav.sidebar a[aria-current]::before {
     content: attr(data-en);
