@@ -60,6 +60,11 @@ nav.sidebar a:hover {
   color: var(--text);
 }
 
+nav.sidebar a[aria-current] {
+  border-left-color: var(--link);
+  color: var(--text);
+}
+
 #theme-toggle {
   display: inline-flex;
   align-items: center;
@@ -163,10 +168,6 @@ main.container {
   nav.sidebar a:hover {
     color: var(--text);
     border-left-color: var(--link);
-  }
-  nav.sidebar a[aria-current] {
-    border-left-color: var(--link);
-    color: var(--text);
   }
   #theme-toggle {
     margin-left: 0;
