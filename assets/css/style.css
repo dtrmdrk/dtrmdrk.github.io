@@ -147,7 +147,7 @@ main.container {
     align-self: stretch;
     min-height: calc(100vh - 5rem);
     border-bottom: none;
-    border-right: 1px solid var(--line);
+    border-right: 2px solid var(--line);
     padding: 0.5rem 1.3rem 0 0;
     width: 100px;
     flex-shrink: 0;
@@ -173,7 +173,7 @@ main.container {
   }
   nav.sidebar a[aria-current] .nav-en {
     display: block;
-    margin-left: -3rem;
+    margin-left: -2.9rem;
     margin-bottom: 0.35rem;
     font-size: 0.8rem;
     font-weight: 700;
