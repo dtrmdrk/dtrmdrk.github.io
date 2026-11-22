@@ -168,6 +168,18 @@ main.container {
     border-left-color: var(--link);
     color: var(--text);
   }
+  nav.sidebar a[aria-current]::before {
+    content: attr(data-en);
+    display: inline-block;
+    margin-right: 0.7rem;
+    padding-right: 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    color: var(--link);
+    vertical-align: middle;
+  }
   #theme-toggle {
     margin-left: 0;
     margin-top: auto;
