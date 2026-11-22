@@ -136,7 +136,7 @@ main.container {
   body {
     max-width: none;
     margin: 0;
-    padding: 2rem 3rem 0;
+    padding: 2rem 0 calc(3rem + 100px) 3rem;
     display: flex;
     justify-content: center;
     gap: 3rem;
