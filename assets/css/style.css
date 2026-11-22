@@ -625,7 +625,7 @@ mark.note:hover::after {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    border-left: 1px solid var(--line);
+    border-left: 2px solid var(--line);
     padding-left: 2rem;
     margin-bottom: 2rem;
   }
@@ -636,7 +636,7 @@ mark.note:hover::after {
     height: fit-content;
   }
   .side-tagnav {
-    margin-top: 1rem;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -670,7 +670,7 @@ mark.note:hover::after {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
-    font-size: 0.85em;
+    font-size: 0.9em;
   }
   .side-postnav a {
     color: var(--meta);
