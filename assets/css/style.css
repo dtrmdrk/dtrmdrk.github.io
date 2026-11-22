@@ -606,7 +606,7 @@ mark.note:hover::after {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    border-left: 2px solid var(--line);
+    border-left: 1px solid var(--line);
     padding-left: 2rem;
     margin-bottom: 2rem;
   }
