@@ -4,7 +4,7 @@ body {
   --link: #11D1D1;
   --line: #EC4D25;
   --meta: #CDCDCF;
-  font-family: "Source Han Serif", "Microsoft YaHei", sans-serif;
+  font-family: "Noto Serif SC", "Microsoft YaHei", sans-serif;
   line-height: 1.8;
   color: var(--text);
   background: var(--bg);
