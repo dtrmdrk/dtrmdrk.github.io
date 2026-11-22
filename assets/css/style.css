@@ -165,20 +165,22 @@ main.container {
     border-left-color: var(--link);
   }
   nav.sidebar a[aria-current] {
-    border-left-color: var(--link);
+    border-left: none;
     color: var(--text);
+    white-space: nowrap;
   }
   nav.sidebar a[aria-current]::before {
     content: attr(data-en);
     display: inline-block;
-    margin-right: 0.7rem;
+    margin-right: 0.6rem;
     padding-right: 0.6rem;
-    font-size: 0.8rem;
+    border-right: 2.5px solid var(--link);
+    font-size: 0.9rem;
     font-weight: 700;
-    letter-spacing: 0.05em;
-    line-height: 1.2;
+    letter-spacing: 0.08em;
     color: var(--link);
     vertical-align: middle;
+    line-height: 1.2;
   }
   #theme-toggle {
     margin-left: 0;
