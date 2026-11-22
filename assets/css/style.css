@@ -136,8 +136,8 @@ main.container {
   body {
     max-width: none;
     margin: 0;
-    padding: 2rem 3rem 0;
-    display: flex;
+    padding: 2rem 3rem;
+    display: block;
     justify-content: center;
     gap: 3rem;
   }
@@ -161,6 +161,7 @@ main.container {
   main.container {
     flex: 1;
     max-width: 1000px;
+    margin: 0 auto;
   }
 }
 .post-list {
