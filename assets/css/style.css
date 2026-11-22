@@ -132,6 +132,10 @@ main.container {
   text-decoration: none;
 }
 
+nav.sidebar .nav-en {
+  display: none;
+}
+
 @media (min-width: 900px) {
   body {
     max-width: none;
@@ -167,9 +171,6 @@ main.container {
   nav.sidebar a[aria-current] {
     color: var(--text);
     white-space: nowrap;
-  }
-  nav.sidebar .nav-en {
-    display: none;
   }
   nav.sidebar a[aria-current] .nav-en {
     display: block;
