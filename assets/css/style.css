@@ -143,7 +143,6 @@ main.container {
   }
   nav.sidebar {
     flex-direction: column;
-    align-items: center;
     align-self: stretch;
     min-height: calc(100vh - 5rem);
     border-bottom: none;
@@ -165,22 +164,19 @@ main.container {
     border-left-color: var(--link);
   }
   nav.sidebar a[aria-current] {
-    border-left: none;
     color: var(--text);
     white-space: nowrap;
   }
   nav.sidebar a[aria-current]::before {
     content: attr(data-en);
-    display: inline-block;
-    margin-right: 0.6rem;
-    padding-right: 0.6rem;
-    border-right: 2.5px solid var(--link);
-    font-size: 0.9rem;
+    display: block;
+    margin-left: -1.2rem;
+    margin-bottom: 0.35rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.14em;
     color: var(--link);
-    vertical-align: middle;
-    line-height: 1.2;
+    white-space: nowrap;
   }
   #theme-toggle {
     margin-left: 0;
