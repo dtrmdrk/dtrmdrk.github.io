@@ -147,7 +147,7 @@ main.container {
     align-self: stretch;
     min-height: calc(100vh - 5rem);
     border-bottom: none;
-    border-right: 2px solid var(--line);
+    border-right: 1px solid var(--line);
     padding: 0.5rem 1.3rem 0 0;
     width: 100px;
     flex-shrink: 0;
@@ -163,6 +163,10 @@ main.container {
   nav.sidebar a:hover {
     color: var(--text);
     border-left-color: var(--link);
+  }
+  nav.sidebar a[aria-current] {
+    border-left-color: var(--link);
+    color: var(--text);
   }
   #theme-toggle {
     margin-left: 0;
