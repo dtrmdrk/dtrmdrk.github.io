@@ -160,7 +160,7 @@ main.container {
   }
   main.container {
     flex: 1;
-    max-width: 1200px;
+    max-width: 1000px;
   }
 }
 .post-list {
