@@ -60,11 +60,6 @@ nav.sidebar a:hover {
   color: var(--text);
 }
 
-nav.sidebar a[aria-current] {
-  border-left-color: var(--link);
-  color: var(--text);
-}
-
 #theme-toggle {
   display: inline-flex;
   align-items: center;
