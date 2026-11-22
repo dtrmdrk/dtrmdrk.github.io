@@ -1,0 +1,207 @@
+const audio = document.getElementById('bgm');
+const playBtn = document.getElementById('play-btn');
+
+if (audio && playBtn) {
+  const seek = document.getElementById('seek');
+  const timeEl = document.getElementById('track-time');
+  const volEl = document.getElementById('volume');
+  const nameEl = document.getElementById('track-name');
+  const volBtn = document.getElementById('vol-btn');
+  let pendingPos = 0;
+
+  const pIcons = {
+    play:  '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>',
+    pause: '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>'
+  };
+
+  const tracks = [
+    { name: 'Best Before', src: "/assets/music/01.mp3" },
+    { name: 'Olive Lover', src: "/assets/music/02.mp3" }
+  ];
+
+  let index = parseInt(localStorage.getItem('player-track') || '0', 10);
+  if (isNaN(index) || index >= tracks.length) index = 0;
+
+  const fmt = t => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`;
+  const updateTime = () => {
+    if (timeEl && audio.duration) timeEl.textContent = `${fmt(audio.currentTime)} / ${fmt(audio.duration)}`;
+  };
+  const saveState = () => {
+    try {
+      localStorage.setItem('player-pos-' + index, String(audio.currentTime));
+      localStorage.setItem('player-was-playing', audio.paused ? '0' : '1');
+      localStorage.setItem('player-track', String(index));
+    } catch (e) {}
+  };
+
+  function loadTrack(i, autoplay) {
+    index = (i + tracks.length) % tracks.length;
+    audio.src = tracks[index].src;
+    nameEl.textContent = tracks[index].name;
+    pendingPos = parseFloat(localStorage.getItem('player-pos-' + index) || '0');
+    seek.value = 0;
+    if (autoplay) audio.play().then(() => { playBtn.innerHTML = pIcons.pause; }).catch(() => {});
+    saveState();
+  }
+
+  loadTrack(index, false);
+  if (localStorage.getItem('player-was-playing') === '1') {
+    audio.play().then(() => { playBtn.innerHTML = pIcons.pause; }).catch(() => {});
+  }
+
+  playBtn.addEventListener('click', () => {
+    if (audio.paused) { audio.play(); playBtn.innerHTML = pIcons.pause; }
+    else { audio.pause(); playBtn.innerHTML = pIcons.play; }
+    saveState();
+  });
+
+  document.getElementById('prev-btn').addEventListener('click', () => {
+    localStorage.setItem('player-pos-' + index, '0');
+    loadTrack(index - 1, true);
+  });
+
+  document.getElementById('next-btn').addEventListener('click', () => {
+    localStorage.setItem('player-pos-' + index, '0');
+    loadTrack(index + 1, true);
+  });
+
+  audio.addEventListener('ended', () => {
+    localStorage.setItem('player-pos-' + index, '0');
+    if (index < tracks.length - 1) loadTrack(index + 1, true);
+    else playBtn.innerHTML = pIcons.play;
+  });
+
+  audio.addEventListener('loadedmetadata', () => {
+    updateTime();
+    if (audio.duration) {
+      audio.currentTime = (pendingPos > audio.duration - 5) ? 0 : pendingPos;
+    }
+  });
+
+  audio.addEventListener('timeupdate', () => {
+    if (audio.duration) seek.value = (audio.currentTime / audio.duration) * 100;
+    updateTime();
+    saveState();
+  });
+
+  seek.addEventListener('input', () => {
+    audio.currentTime = (seek.value / 100) * audio.duration;
+  });
+
+  if (volEl) {
+    volEl.value = localStorage.getItem('player-vol') || '1';
+    audio.volume = parseFloat(volEl.value);
+    volEl.addEventListener('input', () => {
+      audio.volume = parseFloat(volEl.value);
+      localStorage.setItem('player-vol', volEl.value);
+    });
+  }
+}
+
+
+const player = document.getElementById('player');
+const foldBtn = document.getElementById('fold-btn');
+
+if (player && foldBtn) {
+  if (localStorage.getItem('player-folded') !== '0') {
+    player.classList.add('collapsed');
+    foldBtn.textContent = '♪';
+  }
+  foldBtn.addEventListener('click', () => {
+    const folded = player.classList.toggle('collapsed');
+    foldBtn.textContent = folded ? '♪' : '—';
+    localStorage.setItem('player-folded', folded ? '1' : '0');
+  });
+}
+
+
+
+
+const backTop = document.getElementById('back-top');
+
+if (backTop) {
+  backTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  const toggleBackTop = () => {
+    const needsScroll = document.documentElement.scrollHeight > window.innerHeight + 50;
+    backTop.style.display = needsScroll ? '' : 'none';
+  };
+  toggleBackTop();
+  window.addEventListener('resize', toggleBackTop);
+}
+
+
+document.addEventListener('contextmenu', e => {
+  if (e.target.tagName === 'IMG') e.preventDefault();
+});
+document.addEventListener('dragstart', e => {
+  if (e.target.tagName === 'IMG') e.preventDefault();
+});
+
+
+
+const btn = document.getElementById('theme-toggle');
+const themes = ['light', 'dark', 'sepia', 'green'];
+const icons = {
+  light: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
+  dark:  '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>',
+  sepia: '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 19l7-7 3 3-7 7-3-3zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5zM2 2l7.6 7.6M11 11a2 2 0 1 0 .01 0"/></svg>',
+  green: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20c0-9 5-15 16-16-1 11-7 16-16 16z"/><path d="M4 20C8 14 12 11 17 9"/></svg>'
+};
+
+let currentTheme = localStorage.getItem('theme');
+
+function applyTheme(name) {
+  document.body.classList.remove(...themes);
+  if (name !== 'light') document.body.classList.add(name);
+  btn.innerHTML = icons[name];
+}
+
+function themeByTime() {
+  const h = new Date().getHours();
+  return (h >= 19 || h < 7) ? 'dark' : 'light';
+}
+
+if (currentTheme === null) currentTheme = themeByTime();
+applyTheme(currentTheme);
+
+btn.addEventListener('click', () => {
+  currentTheme = themes[(themes.indexOf(currentTheme) + 1) % themes.length];
+  applyTheme(currentTheme);
+  localStorage.setItem('theme', currentTheme);
+});
+
+
+
+
+const titleEl = document.getElementById('clock-title');
+
+function tick() {
+  const now = new Date();
+  const time = now.toLocaleDateString('zh-CN') + ' ' + now.toLocaleTimeString('zh-CN', { hour12: false });
+  if (titleEl) titleEl.textContent = time;
+  document.title = time;
+  if (localStorage.getItem('theme') === null) {
+    currentTheme = themeByTime();
+    applyTheme(currentTheme);
+  }
+}
+
+if (titleEl) {
+  const firstVisit = !localStorage.getItem('visited');
+  titleEl.textContent = firstVisit ? 'WELCOME TO MY BLOG' : 'WELCOME BACK';
+  localStorage.setItem('visited', '1');
+
+  setTimeout(() => {
+    titleEl.classList.add('fade-out');
+    setTimeout(() => {
+      tick();
+      setInterval(tick, 1000);
+      titleEl.classList.remove('fade-out');
+    }, 800);
+  }, 3000);
+} else {
+  setInterval(tick, 1000);
+}
