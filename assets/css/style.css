@@ -168,8 +168,10 @@ main.container {
     color: var(--text);
     white-space: nowrap;
   }
-  nav.sidebar a[aria-current]::before {
-    content: attr(data-en);
+  nav.sidebar .nav-en {
+    display: none;
+  }
+  nav.sidebar a[aria-current] .nav-en {
     display: block;
     margin-left: -1.2rem;
     margin-bottom: 0.35rem;
@@ -177,7 +179,12 @@ main.container {
     font-weight: 700;
     letter-spacing: 0.14em;
     color: var(--link);
-    white-space: nowrap;
+  }
+  nav.sidebar a[aria-current] .cap {
+    font-family: "Snell Roundhand", "Apple Chancery", "Segoe Script", "Brush Script MT", "Lucida Handwriting", cursive;
+    line-height: 0.9;
+    margin-right: 0.15rem;
+    vertical-align: -0.15em;
   }
   #theme-toggle {
     margin-left: 0;
