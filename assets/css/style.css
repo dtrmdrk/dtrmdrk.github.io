@@ -182,6 +182,7 @@ main.container {
   }
   nav.sidebar a[aria-current] .cap {
     font-family: "Snell Roundhand", "Apple Chancery", "Segoe Script", "Brush Script MT", "Lucida Handwriting", cursive;
+    font-size: 2.4rem;
     margin-right: 0.15rem;
     vertical-align: -0.15em;
   }
