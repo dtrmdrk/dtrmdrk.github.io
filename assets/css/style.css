@@ -173,7 +173,6 @@ main.container {
     display: inline-block;
     margin-right: 0.7rem;
     padding-right: 0.6rem;
-    border-right: 2.5px solid var(--link);
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.05em;
