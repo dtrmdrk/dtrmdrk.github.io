@@ -718,6 +718,14 @@ mark.note:hover::after {
     border-color: var(--link);
   }
 }
+@media (min-width: 900px) and (max-width: 1400px) {
+  .side-col {
+    border-left: 1px solid var(--line);
+  }
+  .vol-group #volume {
+    width: 30px;
+  }
+}
 @media (max-width: 899px) {
   .player {
     display: flex;
