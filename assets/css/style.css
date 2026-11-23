@@ -254,7 +254,7 @@ nav.sidebar .nav-en {
 
 .post-meta {
   color: var(--meta);
-  font-size: 1em;
+  font-size: 1.05rem;
 }
 
 .post-meta p {
@@ -267,7 +267,7 @@ nav.sidebar .nav-en {
 
 .post-revised {
   margin-left: auto;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--meta);
   font-variant-numeric: tabular-nums;
   flex-shrink: 0;
