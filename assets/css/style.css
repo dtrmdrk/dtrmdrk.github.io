@@ -772,7 +772,7 @@ mark.note:hover::after {
     background: none;
     color: var(--meta);
   }
-  .side-bottom {
+  .side-tagnav {
     display: none;
   }
   .reader-mode .player {
