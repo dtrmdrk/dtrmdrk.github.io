@@ -203,7 +203,7 @@ nav.sidebar .nav-en {
     padding: 2rem 1.5rem 0 2rem;
   }
   nav.sidebar {
-    border-right: none;
+    border-right: 1px solid var(--line);
   }
 }
 .post-list {
