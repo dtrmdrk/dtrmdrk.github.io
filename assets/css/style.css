@@ -757,17 +757,6 @@ mark.note:hover::after {
     flex-direction: column;
     gap: 0.3rem;
   }
-  body {
-    padding-bottom: 3.5rem;
-    display: flex;
-    flex-direction: column;
-  }
-  main.container {
-    order: 1;
-  }
-  .side-postnav {
-    order: 2;
-  }
   .vol-group {
     display: none;
   }
@@ -786,25 +775,46 @@ mark.note:hover::after {
   .reader-mode .player {
     display: none;
   }
+  body {
+    padding-bottom: 3.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  main.container,
+  article {
+    display: contents;
+  }
+  article > * {
+    order: 4;
+  }
+  article > h1 {
+    order: 1;
+  }
+  .post-meta {
+    order: 2;
+  }
+  .side-tagnav {
+    order: 3;
+  }
   .side-tagnav {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.5rem 1rem;
     padding: 0 1rem;
-    margin: 0 0 0.5rem;
+    margin: 0 0 1rem;
   }
   .side-tagnav .tagrow {
     margin: 0;
   }
   .side-postnav {
+    order: 5;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 1rem;
     border-top: 1px solid var(--line);
     padding: 1rem;
-    margin-top: 2rem;
     font-size: 0.85em;
   }
   .side-postnav a {
@@ -812,6 +822,12 @@ mark.note:hover::after {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+  .side-bottom {
+    order: 6;
+  }
+  .site-footer {
+    order: 7;
   }
 }
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
