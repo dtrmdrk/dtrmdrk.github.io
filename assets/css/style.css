@@ -519,7 +519,7 @@ mark.note:hover::after {
 
 .timeline-year {
   margin: 2.2rem 0 0.6rem;
-  font-size: 1.05rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--meta);
   letter-spacing: 0.12em;
