@@ -776,7 +776,6 @@ mark.note:hover::after {
     display: none;
   }
   body {
-    padding-bottom: 3.5rem;
     display: flex;
     flex-direction: column;
   }
@@ -793,10 +792,11 @@ mark.note:hover::after {
   .post-meta {
     order: 2;
   }
-  .side-tagnav {
-    order: 3;
+  .site-footer {
+    order: 6;
   }
   .side-tagnav {
+    order: 3;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -822,12 +822,6 @@ mark.note:hover::after {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-  .side-bottom {
-    order: 6;
-  }
-  .site-footer {
-    order: 7;
   }
 }
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
