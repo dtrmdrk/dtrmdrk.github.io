@@ -809,10 +809,10 @@ mark.note:hover::after {
     order: 3;
   }
   .side-bottom {
-    order: 6;
+    order: 7;
   }
   .site-footer {
-    order: 7;
+    order: 6;
   }
   .side-tagnav {
     order: 2;
