@@ -517,6 +517,21 @@ mark.note:hover::after {
   text-align: right;
 }
 
+.timeline-year {
+  margin: 2.2rem 0 0.6rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--meta);
+  letter-spacing: 0.12em;
+  border-left: 3px solid var(--link);
+  padding-left: 0.6rem;
+  line-height: 1.4;
+}
+
+.timeline .post-list {
+  margin-bottom: 0.5rem;
+}
+
 .player {
   display: none;
 }
@@ -772,11 +787,59 @@ mark.note:hover::after {
     background: none;
     color: var(--meta);
   }
-  .side-tagnav {
-    display: none;
-  }
   .reader-mode .player {
     display: none;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  main.container,
+  article,
+  .side-col {
+    display: contents;
+  }
+  article > * {
+    order: 4;
+  }
+  article > h1 {
+    order: 1;
+  }
+  .post-meta {
+    order: 3;
+  }
+  .side-bottom {
+    order: 6;
+  }
+  .site-footer {
+    order: 7;
+  }
+  .side-tagnav {
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    padding: 0 1rem;
+    margin-left: auto;
+  }
+  .side-tagnav .tagrow {
+    margin: 0;
+  }
+  .side-postnav {
+    order: 5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+    font-size: 0.85em;
+  }
+  .side-postnav a {
+    max-width: 45%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
