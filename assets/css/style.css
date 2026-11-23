@@ -759,6 +759,14 @@ mark.note:hover::after {
   }
   body {
     padding-bottom: 3.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  main.container {
+    order: 1;
+  }
+  .side-postnav {
+    order: 2;
   }
   .vol-group {
     display: none;
@@ -775,11 +783,35 @@ mark.note:hover::after {
     background: none;
     color: var(--meta);
   }
-  .side-tagnav, .side-postnav {
-    display: none;
-  }
   .reader-mode .player {
     display: none;
+  }
+  .side-tagnav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    padding: 0 1rem;
+    margin: 0 0 0.5rem;
+  }
+  .side-tagnav .tagrow {
+    margin: 0;
+  }
+  .side-postnav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    border-top: 1px solid var(--line);
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.85em;
+  }
+  .side-postnav a {
+    max-width: 45%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
