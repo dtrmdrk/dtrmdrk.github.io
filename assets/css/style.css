@@ -140,7 +140,7 @@ nav.sidebar .nav-en {
   body {
     max-width: none;
     margin: 0;
-    padding: 2rem 3rem 0 calc(3rem + 30px);
+    padding: 2rem 3rem 0 calc(3rem + 40px);
     display: flex;
     justify-content: center;
     gap: 3rem;
@@ -153,7 +153,7 @@ nav.sidebar .nav-en {
     border-bottom: none;
     border-right: 2px solid var(--line);
     padding: 0.5rem 1.3rem 0 0;
-    width: 120px;
+    width: 110px;
     flex-shrink: 0;
     gap: 4rem;
     flex-wrap: nowrap;
