@@ -723,7 +723,7 @@ mark.note:hover::after {
     border-left: 1px solid var(--line);
   }
   .vol-group #volume {
-    width: 30px;
+    width: 20px;
   }
 }
 @media (max-width: 899px) {
