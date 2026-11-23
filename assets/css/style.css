@@ -780,7 +780,8 @@ mark.note:hover::after {
     flex-direction: column;
   }
   main.container,
-  article {
+  article,
+  .side-col {
     display: contents;
   }
   article > * {
@@ -792,8 +793,11 @@ mark.note:hover::after {
   .post-meta {
     order: 2;
   }
-  .site-footer {
+  .side-bottom {
     order: 6;
+  }
+  .site-footer {
+    order: 7;
   }
   .side-tagnav {
     order: 3;
@@ -822,9 +826,6 @@ mark.note:hover::after {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-  .side-bottom {
-    display: none;
   }
 }
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
