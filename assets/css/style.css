@@ -197,7 +197,7 @@ nav.sidebar .nav-en {
     max-width: 1000px;
   }
 }
-@media (min-width: 900px) and (max-width: 1400px) {
+@media (min-width: 900px) and (max-width: 1200px) {
   body {
     gap: 1.5rem;
     padding: 2rem 3rem 0 2rem;
