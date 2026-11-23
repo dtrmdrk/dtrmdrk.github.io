@@ -823,6 +823,9 @@ mark.note:hover::after {
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  .side-bottom {
+    display: none;
+  }
 }
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
   @media (max-width: 899px) {
