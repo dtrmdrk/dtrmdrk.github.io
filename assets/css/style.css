@@ -152,7 +152,7 @@ nav.sidebar .nav-en {
     min-height: calc(100vh - 5rem);
     border-bottom: none;
     border-right: 2px solid var(--line);
-    padding: 0.5rem 1.3rem 0 0;
+    padding: 0.5rem 2rem 0 0;
     width: 110px;
     flex-shrink: 0;
     gap: 4rem;
