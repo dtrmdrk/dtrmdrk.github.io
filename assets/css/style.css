@@ -200,7 +200,10 @@ nav.sidebar .nav-en {
 @media (min-width: 900px) and (max-width: 1400px) {
   body {
     gap: 1.5rem;
-    padding: 2rem 1.5rem 0;
+    padding: 2rem 1.5rem 0 2rem;
+  }
+  nav.sidebar {
+    border-right: none;
   }
 }
 .post-list {
