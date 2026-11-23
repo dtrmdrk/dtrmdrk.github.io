@@ -720,7 +720,7 @@ mark.note:hover::after {
 }
 @media (min-width: 900px) and (max-width: 1400px) {
   .side-col {
-    border-left: 1px solid var(--line);
+    border-left: none;
   }
   .vol-group #volume {
     width: 20px;
