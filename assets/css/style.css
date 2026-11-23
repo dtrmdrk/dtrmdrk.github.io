@@ -523,7 +523,6 @@ mark.note:hover::after {
   font-weight: 700;
   letter-spacing: 0.18em;
   color: var(--link);
-  border-bottom: 2px dotted var(--meta);
 }
 
 .timeline .timeline-year:first-of-type {
