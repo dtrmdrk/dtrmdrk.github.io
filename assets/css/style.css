@@ -197,6 +197,12 @@ nav.sidebar .nav-en {
     max-width: 1000px;
   }
 }
+@media (min-width: 900px) and (max-width: 1400px) {
+  body {
+    gap: 1.5rem;
+    padding: 2rem 1.5rem 0;
+  }
+}
 .post-list {
   list-style: none;
   padding: 0;
