@@ -517,21 +517,16 @@ mark.note:hover::after {
   text-align: right;
 }
 
-.timeline-year {
-  margin: 2.2rem 0 0.6rem;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--meta);
-  letter-spacing: 0.12em;
-  border-left: 3px solid var(--link);
-  padding-left: 0.6rem;
-  line-height: 1.4;
-}
-
 .timeline .post-list {
   border-left: 1px dashed var(--line);
   padding-left: 1.2rem;
   margin-left: 0.2rem;
+}
+
+.timeline-year {
+  border-left: none;
+  padding-left: 0;
+  margin-left: -1.2rem;
 }
 
 .player {
