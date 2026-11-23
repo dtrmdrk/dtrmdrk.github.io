@@ -718,7 +718,7 @@ mark.note:hover::after {
     border-color: var(--link);
   }
 }
-@media (min-width: 900px) and (max-width: 1400px) {
+@media (min-width: 900px) and (max-width: 1200px) {
   .side-col {
     border-left: 0.5px solid var(--line);
   }
