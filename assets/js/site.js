@@ -16,7 +16,7 @@ if (audio && playBtn) {
 
   const tracks = [
     { name: 'Best Before', src: "/assets/music/01.mp3" },
-    { name: 'Olive Lover', src: "/assets/music/02.mp3" }
+    { name: 'Olive Lover', src: "/assets/music/02" }
   ];
 
   let index = parseInt(localStorage.getItem('player-track') || '0', 10);
